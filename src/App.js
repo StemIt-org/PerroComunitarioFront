@@ -4,7 +4,7 @@ import React from 'react';
 function App() {
   return (
     <div>
-      Home personal, archivo App.js
+      Home
     </div>
   );
 }
