@@ -19,7 +19,7 @@ export default class NavbarComponent extends React.Component {
     return (
       <Router>
         <Navbar bg="light" expand="lg">
-          <Navbar.Brand >Logo Perro Comunitario</Navbar.Brand>
+          <Link to="/" ><Navbar.Brand >Logo Perro Comunitario</Navbar.Brand></Link> {/* El link esta afuera para que no se ponga el colorsito azul en la navbar */}
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
@@ -65,7 +65,7 @@ export default class NavbarComponent extends React.Component {
           <Route path="/donar">
             <Donar />
           </Route>
-          <Route path="/">
+          <Route exact path="/">
             <Home />
           </Route>
         </Switch>
