@@ -5,8 +5,8 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css'; // REACT - BOOTSTRAP
 
-import { Router } from 'react-router-dom'
-import history from './services/history'
+import { Router } from 'react-router-dom' // REACT - ROUTER
+import history from './services/history' // HISTORY
 
 ReactDOM.render(
   <React.StrictMode>
