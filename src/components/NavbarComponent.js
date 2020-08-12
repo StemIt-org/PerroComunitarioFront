@@ -8,6 +8,9 @@ import {
   NavLink,
 } from "react-router-dom";
 
+//SERVICES
+
+//SCREENS
 import Home from "../screens/home"
 import Adopcion from "../screens/adopcion"
 import Nosotros from "../screens/nosotros"
@@ -19,35 +22,27 @@ export default class NavbarComponent extends React.Component {
     return (
       <Router>
         <Navbar bg="light" expand="lg">
-          <Link to="/" ><Navbar.Brand >Logo Perro Comunitario</Navbar.Brand></Link> {/* El link esta afuera para que no se ponga el colorsito azul en la navbar */}
+          <Link to="/" ><Navbar.Brand >Logo Perro Comunitario</Navbar.Brand></Link> 
+        {/* El link esta afuera para que no se ponga el colorsito azul en la navbar */}
+        {/* los colores del active y links estan en el index.css*/}
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
-              <Nav.Link>
-                <NavLink class="links" activeClassName="active" to="/">
+                <NavLink className="links" activeClassName="active" exact to="/">
                   Home
                 </NavLink>
-              </Nav.Link>
-              <Nav.Link>
-                <NavLink class="links" activeClassName="active" to="/adopcion">
+                <NavLink className="links" activeClassName="active" to="/adopcion">
                   Adopción
                 </NavLink>
-              </Nav.Link>
-              <Nav.Link>
-                <NavLink class="links" activeClassName="active" to="/nosotros">
+                <NavLink className="links" activeClassName="active" to="/nosotros">
                   Nosotros
                 </NavLink>
-              </Nav.Link>
-              <Nav.Link>
-                <NavLink class="links" activeClassName="active" to="/contacto">
+                <NavLink className="links" activeClassName="active" to="/contacto">
                   Contacto
                 </NavLink>
-              </Nav.Link>
-              <Nav.Link>
-                <NavLink class="links" to="/donar">
+                <NavLink className="links" to="/donar">
                   Donar
                 </NavLink>
-              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
