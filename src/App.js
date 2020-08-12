@@ -1,12 +1,16 @@
-import React from 'react';
+import React from "react";
 
+// SCREENS
+import "./App.css";
+import NavbarComponent from "./components/NavbarComponent";
+import Home from "./screens/home";
 
-function App() {
-  return (
-    <div>
-      Home
-    </div>
-  );
+export default class App extends React.Component {
+  render() {
+    return (
+      <>
+      <NavbarComponent />
+      </>
+    );
+  }
 }
-
-export default App;
