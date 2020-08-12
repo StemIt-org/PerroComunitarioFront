@@ -1,9 +1,9 @@
 import React from "react";
 
 export default class Donar extends React.Component {
-  constructor() {
-    super()
-  }
+  // constructor() {
+  //   super()
+  // }
 
   render() {
     return (
