@@ -13,12 +13,23 @@ code {
 }
 /* ESTILOS DE LA NAVBAR */
 .links{
-  padding-left: 10px;
-  padding-right: 10px;
-  /* color: ; */
+  padding-left: 20px;
+  padding-right: 20px;
+  color: black;
+  font-weight: bold;
+}
+.links:hover{
+  color: grey
 }
 .active{
-  color: red
+  color: #ad4345
+}
+
+.colores-rojo{
+  background: #ad4345
+}
+.colores-rojo-text{
+  color: #ad4345
 }
 
 /* */
