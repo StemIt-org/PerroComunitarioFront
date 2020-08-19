@@ -5,6 +5,7 @@ import {Container} from "react-bootstrap"
 import HeaderComponent from "../components/HeaderComponent";
 import EstadisticasComponent from "../components/EstadisticasComponent";
 import ShowcaseComponent from "../components/ShowcaseComponent.js";
+import NoticiasComponent from "../components/NoticiasComponent.js";
 
 export default class Home extends Component {
     // goBack(){
@@ -19,6 +20,7 @@ export default class Home extends Component {
             <HeaderComponent />
             <EstadisticasComponent />
             <ShowcaseComponent />
+            <NoticiasComponent />
             </Container>
             </>
         );

@@ -18,6 +18,9 @@ body {
 }
 
 /* ESTILOS GLOBALES*/
+img{
+  width:100%;
+}
 .colores-rojo{
   background:var(--rojo)!important
 }
@@ -35,6 +38,9 @@ body {
 }
 .borderRadius{
   border-radius: 20px;
+}
+.txtDecorateNone{
+  text-decoration: none;
 }
 
 /* ESTILOS DE LA NAVBAR */

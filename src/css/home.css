@@ -35,21 +35,17 @@
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
     font-size: 20px;
-    margin-bottom: 20px;
   }
   .adopcion-container h2{
     color: white;
     font-weight: bold;
     font-size: 30px;
-    font-family: 'Montserrat', sans-serif;
   }
   .adopcion-container p{
     color: white;
-    font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     font-size: 15px;
     margin-top: 10px;
-  
   }
   .adopcion-container img{
     width: 179px;
@@ -62,3 +58,36 @@
     text-decoration-color: white!important;
 }
   
+
+  /* ESTILOS NOTICIAS*/
+  .noticias-container{
+    border: 2px solid black;
+  }
+  .noticias-container img{
+    width: 179px;
+    height: 129px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  .noticias-container h1{
+    color: #020000;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+  }
+  .noticias-container h2{
+    font-weight: bold;
+    font-size: 23px;
+  }
+  .noticias-container p{
+    font-weight: 500;
+    font-size: 17px;
+    margin-top: 10px;
+  
+  }
+  .noticias-container a, .noticias-container a:hover{
+    color: inherit;
+}
+.rowNoticias{
+  width: 100%;
+}

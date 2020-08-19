@@ -12,24 +12,24 @@ export default class ShowcaseComponent extends React.Component {
       <div className="text-center colorFondoAdopcion borderRadius p-3 adopcion-container">
         <Row className="mb-5">
             <Col>
-                <Link to="/adopcion"> <h2 className="negrita">Perros en adopción</h2> </Link>
+                <Link to="/adopcion"> <h2 className="negrita txtDecorateNone">Perros en adopción</h2> </Link>
             </Col>
         </Row>
         <Row>
           <Col>
-            <h1 className="negrita">Nombre</h1>
+            <h2 className="negrita">Nombre</h2>
             <img src="https://lecto.app/perfil_lisandro.ae79249c.webp" alt="imagen del perro en adopcion"/>
-            <p className="fs-13">Descripcion</p>
+            <p >Descripcion</p>
           </Col>
           <Col>
-            <h1 className="negrita">Nombre</h1>
+            <h2 className="negrita">Nombre</h2>
             <img src="https://lecto.app/perfil_lisandro.ae79249c.webp" alt="imagen del perro en adopcion"/>
-            <p className="fs-13">Descripcion</p>
+            <p>Descripcion</p>
           </Col>
           <Col>
-            <h1 className="negrita">Nombre</h1>
+            <h2 className="negrita">Nombre</h2>
             <img src="https://lecto.app/perfil_lisandro.ae79249c.webp" alt="imagen del perro en adopcion"/>
-            <p className="fs-13">Descripcion</p>
+            <p>Descripcion</p>
           </Col>
         </Row>
       </div>
