@@ -7,17 +7,14 @@ body {
 }
 :root {
   --rojo: #ad4345;
-  --gris: #d4d4d4;
+  --gris:#d4d4d4;
+  --estadisticas: #f3f3f3;
 }
 
 .fuente{
   font-family: 'Montserrat', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
 /* ESTILOS GLOBALES*/
 .colores-rojo{
   background:var(--rojo)!important
@@ -37,6 +34,7 @@ code {
 .borderRadius{
   border-radius: 20px;
 }
+
 /* ESTILOS DE LA NAVBAR */
 .links{
   padding-left: 20px;
@@ -85,4 +83,6 @@ code {
 
 
 /* ESTILOS ESTADISTICAS */
-
+.colorFondoEstadisticas{
+  background-color: var(--estadisticas);
+}
