@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 body {
   margin: 0;
@@ -9,8 +10,12 @@ body {
   --rojo: #ad4345;
   --gris:#d4d4d4;
   --estadisticas: #f3f3f3;
+  --adopcion: #AE4345;
 }
-
+::-webkit-scrollbar
+.fuente{
+  font-family: 'Montserrat', sans-serif;
+}
 
 /* ESTILOS GLOBALES*/
 .colores-rojo{
@@ -82,4 +87,63 @@ body {
 /* ESTILOS ESTADISTICAS */
 .colorFondoEstadisticas{
   background-color: var(--estadisticas);
+}
+.colorFondoAdopcion{
+  background-color: var(--adopcion);
+}
+
+.header-titulo{
+  font-size: 30px;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom : 42px;
+}
+
+.header-text{
+  font-size: 15px;
+  font-weight: normal;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.header-epigrafe{
+  font-size: 15px;
+  font-weight: normal;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* ESTILOS ADOPCION */
+
+.adopcion-container h1{
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.adopcion-container h2{
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+  font-family: 'Montserrat', sans-serif;
+
+
+}
+.adopcion-container p{
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  margin-top: 10px;
+
+}
+
+.adopcion-container img{
+  width: 179px;
+  height: 129px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+a, a:hover{
+  color: inherit!important;
 }
