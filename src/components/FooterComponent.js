@@ -1,15 +1,23 @@
 import React from 'react'
-import { Container, Row, Col } from 'react-bootstrap'
+import { Row, Col } from 'react-bootstrap'
 
 function FooterComponent() {
     return (
-        <Container>
+        <>
+        <br />
+            <hr />
             <Row>
-                <hr />
-                <Col>PERRO COMUNITARIO!</Col>
-                <Col>SOY UN FOOTER WIII</Col>
+                <Col xs={12} lg={2}>
+                    <p className="footer-titulo colores-rojo-text">PERRO <br />COMUNITARIO</p>
+                    <p className="footer-text">Somo una organizacion que e dedica en forma solidaria a mantener un control y seguimiento de los perros in hogar que transitan la calles de Nuevo Delta Tigre</p>
+                    </Col>
+                <Col xs={12} lg={10}>ki onda</Col>
             </Row>
-        </Container>
+            {/* <Row>
+                <Col xs={12} lg={2} className="footer-text">Somo una organizacion que e dedica en forma solidaria a mantener un control y seguimiento de los perros in hogar que transitan la calles de Nuevo Delta Tigre</Col>
+                <Col xs={12} lg={10}>lah rede sociale</Col>
+            </Row>             */}
+        </>
     )
 }
 
