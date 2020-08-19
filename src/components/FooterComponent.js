@@ -11,7 +11,7 @@ function FooterComponent() {
                     <p className="footer-titulo colores-rojo-text">PERRO COMUNITARIO</p>
                     <p className="footer-text">Somos una organizacion que e dedica en forma solidaria a mantener un control y seguimiento de los perros in hogar que transitan la calles de Nuevo Delta Tigre</p>
                 </Col>
-                <Col xs={12} lg={{span:4, offset:6}} >
+                <Col xs={12} lg={10} >
                     <p>Ou lord soy un footer</p>
 
                 </Col>
