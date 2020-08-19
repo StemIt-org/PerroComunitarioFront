@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 
 function FooterComponent() {
   return (
@@ -7,7 +7,7 @@ function FooterComponent() {
       <br />
       <div className="footer-container">
         <Row>
-          <Col>
+          <Col xs={12} lg={3}>
             <p className="footer-titulo colores-rojo-text">PERRO COMUNITARIO</p>
             <p className="footer-text">
               Somos una organizacion que e dedica en forma solidaria a mantener
@@ -15,8 +15,8 @@ function FooterComponent() {
               calles de Nuevo Delta Tigre
             </p>
           </Col>
-          <Col>
-            <p>HOLA</p>
+          <Col xs={12} lg={9} >
+            <p>QUE ONDA PADRE SOY UN FOOTER :d</p>
           </Col>
         </Row>
       </div>

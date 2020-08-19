@@ -86,3 +86,22 @@ body {
 .colorFondoEstadisticas{
   background-color: var(--estadisticas);
 }
+
+.header-titulo{
+  font-size: 32px;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  line-height : 42px;
+}
+
+.header-text{
+  font-size: 15px;
+  font-weight: normal;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.header-epigrafe{
+  font-size: 15px;
+  font-weight: normal;
+  font-family: 'Montserrat', sans-serif;
+}
