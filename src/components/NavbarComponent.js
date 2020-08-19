@@ -10,7 +10,7 @@ export default class NavbarComponent extends React.Component {
               <Navbar.Brand className="fuente">
                 <img
                   className="navbar-logo"
-                  src="https://i.gati.ga/logo-perro.png"
+                  src={require('../assets/logo-small.png')}
                   alt="Logo perro comunitario"
                 ></img>
               </Navbar.Brand>
