@@ -5,7 +5,7 @@ import { NavLink, Link } from "react-router-dom";
 export default class NavbarComponent extends React.Component {
   render() {
     return (
-        <Navbar bg="light" expand="lg">
+        <Navbar bg="light" expand="lg" className="mb-5">
             <Link to="/">
               <Navbar.Brand className="fuente">
                 <img

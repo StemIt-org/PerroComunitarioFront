@@ -29,7 +29,8 @@ code {
   text-align: left;
 }
 .links:hover{
-  color: #c46869
+  color: #c46869;
+  text-decoration:none;
 }
 .active{
   color: #ad4345

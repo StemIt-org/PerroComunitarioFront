@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 // import history from '../services/history'
+import {Container} from "react-bootstrap"
+import HeaderComponent from "../components/HeaderComponent";
 
 export default class Home extends Component {
     // goBack(){
@@ -9,9 +11,10 @@ export default class Home extends Component {
     render() {
         return (
             <>
-            <h1>Pagina de Inicio</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis fuga voluptas laudantium, pariatur sint repudiandae tenetur at minima in animi, debitis suscipit, quia porro dolorem eos accusantium doloremque exercitationem vitae.</p>
+            <Container >
             {/* <button onClick={this.goBack}>GO BACK</button> */}
+            <HeaderComponent />
+            </Container>
             </>
         );
     }
