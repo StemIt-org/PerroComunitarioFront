@@ -5,6 +5,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+:root {
+  --rojo: #ad4345;
+  --gris: #d4d4d4;
+}
 
 .fuente{
   font-family: 'Montserrat', sans-serif;
@@ -13,6 +17,25 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+/* ESTILOS GLOBALES*/
+.colores-rojo{
+  background:var(--rojo)!important
+}
+.colores-rojo-text{
+  color: var(--rojo)!important
+}
+.colores-gris{
+  background: var(--gris)!important
+}
+.negrita{
+  font-weight: bold;
+}
+.fs-13{
+  font-size: 1.3rem;
+}
+.borderRadius{
+  border-radius: 20px;
 }
 /* ESTILOS DE LA NAVBAR */
 .links{
@@ -33,7 +56,7 @@ code {
   text-decoration:none;
 }
 .active{
-  color: #ad4345
+  color: var(--rojo); 
 }
 .navbar-logo{
   height: 59px;
@@ -56,16 +79,10 @@ code {
 }
 
 .footer-container{
-  background: #d4d4d4;
+  background: var(--gris);
   padding: 20px;
 }
 
-/* ESTILOS CUSTOM */
-.colores-rojo{
-  background: #ad4345!important
-}
-.colores-rojo-text{
-  color: #ad4345!important
-}
 
-/* */
+/* ESTILOS ESTADISTICAS */
+

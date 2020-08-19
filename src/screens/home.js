@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 // import history from '../services/history'
 import {Container} from "react-bootstrap"
 import HeaderComponent from "../components/HeaderComponent";
+import EstadisticasComponent from "../components/EstadisticasComponent";
 
 export default class Home extends Component {
     // goBack(){
@@ -14,6 +15,7 @@ export default class Home extends Component {
             <Container >
             {/* <button onClick={this.goBack}>GO BACK</button> */}
             <HeaderComponent />
+            <EstadisticasComponent />
             </Container>
             </>
         );
