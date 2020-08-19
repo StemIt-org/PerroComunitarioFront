@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import {Container} from "react-bootstrap"
 import HeaderComponent from "../components/HeaderComponent";
 import EstadisticasComponent from "../components/EstadisticasComponent";
+import ShowcaseComponent from "../components/ShowcaseComponent.js";
 
 export default class Home extends Component {
     // goBack(){
@@ -16,6 +17,7 @@ export default class Home extends Component {
             {/* <button onClick={this.goBack}>GO BACK</button> */}
             <HeaderComponent />
             <EstadisticasComponent />
+            <ShowcaseComponent />
             </Container>
             </>
         );
