@@ -1,0 +1,64 @@
+/* ESTILOS ESTADISTICAS */
+.colorFondoEstadisticas{
+    background-color: var(--estadisticas);
+  }
+  .colorFondoAdopcion{
+    background-color: var(--adopcion);
+  }
+  .estadisticas-container a, .estadisticas-container a:hover{
+      color: inherit;
+  }
+  /* ESTILOS HEADER */
+  .header-titulo{
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom : 42px;
+  }
+  
+  .header-text{
+    font-size: 15px;
+    font-weight: normal;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .header-epigrafe{
+    font-size: 15px;
+    font-weight: normal;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  /* ESTILOS ADOPCION */
+  
+  .adopcion-container h1{
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  .adopcion-container h2{
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .adopcion-container p{
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    margin-top: 10px;
+  
+  }
+  .adopcion-container img{
+    width: 179px;
+    height: 129px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  .adopcion-container a, .adopcion-container a:hover{
+    color: inherit;
+    text-decoration-color: white!important;
+}
+  
