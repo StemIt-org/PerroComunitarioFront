@@ -9,13 +9,13 @@ export default class ShowcaseComponent extends React.Component {
 
   render() {
     return (
-      <div className="text-center borderRadius noticias-container p-3 mt-5">
+      <div className="text-center borderRadius noticias-container-home p-3 mt-5">
         <Row className="mb-5">
             <Col>
                 <Link to="/nosotros"> <h1 className="negrita txtDecorateNone">Noticias</h1> </Link>
             </Col>
         </Row>
-        <Row className="mb-5 rowNoticias" >
+        <Row className="mb-5 rowNoticias-home" >
           <Col >
           <div className="border borderRadius p-5">
             <h2 className="negrita">La historia de Jorge</h2>
@@ -38,7 +38,7 @@ export default class ShowcaseComponent extends React.Component {
           </div>
           </Col>
         </Row>
-        <Row className="mb-5 rowNoticias">
+        <Row className="mb-5 rowNoticias-home">
           <Col>
           <div className="border borderRadius p-5">
             <h2 className="negrita">La historia de Anastacio</h2>

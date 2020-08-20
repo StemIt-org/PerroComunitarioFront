@@ -10,7 +10,7 @@ export default class EstadisticasComponent extends React.Component {
   render() {
     return (
       <>
-        <div className="text-center colorFondoEstadisticas borderRadius p-3 estadisticas-container">
+        <div className="text-center colorFondoEstadisticas-home borderRadius p-3 estadisticas-home-container">
           <Row className="mb-5">
             <Col>
               <Link to="/nosotros">

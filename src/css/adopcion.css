@@ -1,0 +1,24 @@
+.adopcion-titulo{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 37px;
+}
+
+.header-adopcion-container{
+    background-color: #ECECEC;
+    padding: 30px;
+    border-radius: 20px;
+}
+.header-adopcion-container h1{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+}
+.header-adopcion-container img{
+    width: 100%;
+    max-width: 357px;
+    height: auto;
+}

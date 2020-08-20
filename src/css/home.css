@@ -1,28 +1,28 @@
 /* ESTILOS ESTADISTICAS */
-.colorFondoEstadisticas{
+.colorFondoEstadisticas-home{
     background-color: var(--estadisticas);
   }
-  .colorFondoAdopcion{
+  .colorFondoAdopcion-home{
     background-color: var(--adopcion);
   }
-  .estadisticas-container a, .estadisticas-container a:hover{
+  .estadisticas-home-container a, .estadisticas-home-container a:hover{
       color: inherit;
   }
   /* ESTILOS HEADER */
-  .header-titulo{
+  .header-home-titulo{
     font-size: 30px;
     font-weight: bold;
     font-family: 'Montserrat', sans-serif;
     margin-bottom : 42px;
   }
   
-  .header-text{
+  .header-home-text{
     font-size: 15px;
     font-weight: normal;
     font-family: 'Montserrat', sans-serif;
   }
   
-  .header-epigrafe{
+  .header-home-epigrafe{
     font-size: 15px;
     font-weight: normal;
     font-family: 'Montserrat', sans-serif;
@@ -30,64 +30,64 @@
   
   /* ESTILOS ADOPCION */
   
-  .adopcion-container h1{
+  .adopcion-home-container h1{
     color: white;
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
     font-size: 20px;
   }
-  .adopcion-container h2{
+  .adopcion-home-container h2{
     color: white;
     font-weight: bold;
     font-size: 30px;
   }
-  .adopcion-container p{
+  .adopcion-home-container p{
     color: white;
     font-weight: 500;
     font-size: 15px;
     margin-top: 10px;
   }
-  .adopcion-container img{
+  .adopcion-home-container img{
     width: 179px;
     height: 129px;
     object-fit: cover;
     border-radius: 10px;
   }
-  .adopcion-container a, .adopcion-container a:hover{
-    color: inherit;
+  .adopcion-home-container a, .adopcion-home-container a:hover{
+    color: inherit!important;
     text-decoration-color: white!important;
 }
   
 
   /* ESTILOS NOTICIAS*/
-  .noticias-container{
+  .noticias-container-home{
     border: 2px solid black;
   }
-  .noticias-container img{
+  .noticias-container-home img{
     width: 179px;
     height: 129px;
     object-fit: cover;
     border-radius: 10px;
   }
-  .noticias-container h1{
+  .noticias-container-home h1{
     color: #020000;
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
     font-size: 30px;
   }
-  .noticias-container h2{
+  .noticias-container-home h2{
     font-weight: bold;
     font-size: 23px;
   }
-  .noticias-container p{
+  .noticias-container-home p{
     font-weight: 500;
     font-size: 17px;
     margin-top: 10px;
   
   }
-  .noticias-container a, .noticias-container a:hover{
+  .noticias-container-home a, .noticias-container-home a:hover{
     color: inherit;
 }
-.rowNoticias{
+.rowNoticias-home{
   width: 100%;
 }

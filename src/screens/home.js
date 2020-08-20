@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 // import history from '../services/history'
 import '../css/home.css';
 import {Container} from "react-bootstrap"
-import HeaderComponent from "../components/HeaderComponent";
-import EstadisticasComponent from "../components/EstadisticasComponent";
-import ShowcaseComponent from "../components/ShowcaseComponent.js";
-import NoticiasComponent from "../components/NoticiasComponent.js";
+import HeaderComponent from "../components/home/HeaderHome";
+import EstadisticasComponent from "../components/home/EstadisticasHome";
+import ShowcaseComponent from "../components/home/ShowcaseHome.js";
+import NoticiasComponent from "../components/home/NoticiasHome.js";
 
 export default class Home extends Component {
     // goBack(){
