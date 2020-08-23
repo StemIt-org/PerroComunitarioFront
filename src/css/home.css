@@ -91,4 +91,5 @@
 .linksPaginas{
   font-weight: bold;
   font-size:22px;
+  cursor: pointer;
 }
