@@ -63,7 +63,7 @@ export default class ShowcaseComponent extends React.Component {
           <Col>
             <Link to="/nosotros">
               {" "}
-              <h1 className="negrita txtDecorateNone">Noticias</h1>{" "}
+              <h1 className="negrita txtDecorateNone" id ="tituloNoticiasHome">Noticias</h1>{" "}
             </Link>
           </Col>
         </Row>
@@ -71,7 +71,7 @@ export default class ShowcaseComponent extends React.Component {
 
           {this.state.paginaSeleccionada[0] && this.state.noticias.slice(0, 6).map((noti, i) => {
             return (
-              <Col xs={12} lg={4}>
+              <Col xs={12} lg={4} key ={i}>
                 <div className="w-100 border borderRadius p-5 mb-5">
                   <h2 className="negrita">{noti.titulo}</h2>
                   <img src={noti.imagen} alt="imagen del perro en adopcion" />
@@ -82,7 +82,7 @@ export default class ShowcaseComponent extends React.Component {
           })}
           {this.state.paginaSeleccionada[1] && this.state.noticias.slice(6, 12).map((noti, i) => {
             return (
-              <Col xs={12} lg={4}>
+              <Col xs={12} lg={4} key={i}>
                 <div className="w-100 border borderRadius p-5 mb-5">
                   <h2 className="negrita">{noti.titulo}</h2>
                   <img src={noti.imagen} alt="imagen del perro en adopcion" />
@@ -93,7 +93,7 @@ export default class ShowcaseComponent extends React.Component {
           })}
           {this.state.paginaSeleccionada[2] && this.state.noticias.slice(12, 18).map((noti, i) => {
             return (
-              <Col xs={12} lg={4}>
+              <Col xs={12} lg={4} key={i}>
                 <div className="w-100 border borderRadius p-5 mb-5">
                   <h2 className="negrita">{noti.titulo}</h2>
                   <img src={noti.imagen} alt="imagen del perro en adopcion" />
@@ -105,16 +105,16 @@ export default class ShowcaseComponent extends React.Component {
         </Row>
         <Row className="paginas-noticias justify-content-center">
           <Col lg={{ span: 1 }} className="mr-3">
-            <a onClick={() => this.setLinksPaginas(0)} className={`linksPaginas ${this.state.paginaSeleccionada[0] ? "colores-rojo-text" : ""}`}>Pagina1</a>
+            <a onClick={() => this.setLinksPaginas(0)} href="#tituloNoticiasHome" className={`linksPaginas ${this.state.paginaSeleccionada[0] ? "colores-rojo-text" : ""}`}>Pagina1</a>
           </Col>
           {this.state.noticias.length > 6 && (
             <Col lg={{ span: 1 }} className="mr-3">
-              <a onClick = { () => this.setLinksPaginas(1)}className={`linksPaginas ${this.state.paginaSeleccionada[1] ? "colores-rojo-text" : ""}`}>Pagina2</a>
+              <a onClick = { () => this.setLinksPaginas(1)} href = "#tituloNoticiasHome" className={`linksPaginas ${this.state.paginaSeleccionada[1] ? "colores-rojo-text" : ""}`}>Pagina2</a>
             </Col>
           )}
           {this.state.noticias.length > 12 && (
             <Col lg={{ span: 1 }}>
-              <a onClick = { () => this.setLinksPaginas(2)} className={`linksPaginas ${this.state.paginaSeleccionada[2] ? "colores-rojo-text" : ""}`}>Pagina3</a>
+              <a onClick = { () => this.setLinksPaginas(2)} href = "#tituloNoticiasHome" className={`linksPaginas ${this.state.paginaSeleccionada[2] ? "colores-rojo-text" : ""}`}>Pagina3</a>
             </Col>
           )}
         </Row>
