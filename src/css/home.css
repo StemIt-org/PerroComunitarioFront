@@ -88,6 +88,7 @@
   .noticias-container-home a, .noticias-container-home a:hover{
     color: inherit;
 }
-.rowNoticias-home{
-  width: 100%;
+.linksPaginas{
+  font-weight: bold;
+  font-size:22px;
 }
