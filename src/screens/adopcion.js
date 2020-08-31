@@ -2,6 +2,7 @@ import React from "react";
 import '../css/adopcion.css'
 import {Container} from "react-bootstrap"
 import HeaderAdopcion from '../components/adopcion/HeaderAdopcion'
+import ListaAdopcion from '../components/adopcion/ListaAdopcion'
 export default class Adoopcion extends React.Component {
   // constructor() {
   //   super()
@@ -13,8 +14,8 @@ export default class Adoopcion extends React.Component {
         <Container>
           <h1 className="adopcion-titulo">Perros en adopcion</h1>
           <HeaderAdopcion />
-          <p style={{marginBottom: 1000}}>hola</p>
-          {/* ^^^^^BORRAR ESTO PERO ES PARA QUE HAYA LUGAR ^^^^ */}
+          <ListaAdopcion />
+          
         </Container>
 
       </>
