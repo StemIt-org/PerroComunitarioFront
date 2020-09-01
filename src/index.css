@@ -20,6 +20,10 @@ body {
 img{
   width:100%;
 }
+h1{
+  font-size:30px;
+  font-weight: bold;
+}
 .colores-rojo{
   background:var(--rojo)!important
 }

@@ -18,17 +18,26 @@ export default class ShowcaseComponent extends React.Component {
         <Row>
           <Col>
             <h2 className="negrita">Nombre</h2>
-            <img src="https://lecto.app/perfil_lisandro.ae79249c.webp" alt="imagen del perro en adopcion"/>
+            <img
+              src={require("../../assets/perro-adopcion-2.png")}
+              alt="Imagen Perro"
+            />
             <p >Descripcion</p>
           </Col>
           <Col>
             <h2 className="negrita">Nombre</h2>
-            <img src="https://lecto.app/perfil_lisandro.ae79249c.webp" alt="imagen del perro en adopcion"/>
+            <img
+              src={require("../../assets/perro-adopcion-2.png")}
+              alt="Imagen Perro"
+            />
             <p>Descripcion</p>
           </Col>
           <Col>
             <h2 className="negrita">Nombre</h2>
-            <img src="https://lecto.app/perfil_lisandro.ae79249c.webp" alt="imagen del perro en adopcion"/>
+            <img
+              src={require("../../assets/perro-adopcion-2.png")}
+              alt="Imagen Perro"
+            />
             <p>Descripcion</p>
           </Col>
         </Row>

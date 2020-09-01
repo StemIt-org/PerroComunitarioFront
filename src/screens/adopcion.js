@@ -12,7 +12,6 @@ export default class Adoopcion extends React.Component {
     return (
       <>
         <Container>
-          <h1 className="adopcion-titulo">Perros en adopcion</h1>
           <HeaderAdopcion />
           <ListaAdopcion />
           

@@ -3,7 +3,6 @@
     font-size: 30px;
     font-weight: bold;
     text-align: center;
-    margin-bottom: 37px;
 }
 
 .header-adopcion-container{
@@ -15,10 +14,35 @@
     font-family: 'Montserrat', sans-serif;
     font-size: 22px;
     font-weight: bold;
-    text-align: center;
 }
 .header-adopcion-container img{
     width: 100%;
     max-width: 357px;
     height: auto;
+}
+.tituloAdopcion{
+    font-weight: bold;
+    font-size:30px;
+}
+.listaContainer Col{
+    max-width: 237px;
+    max-height:170px;
+}
+.listaContainer h2{
+    font-size: 20px;
+    font-weight: bold;
+}
+.listaContainer img{
+    object-fit:cover;
+    border-radius:10px;
+    max-width: 237px;
+}
+.listaContainer p{
+    max-height:170px;
+    font-size:15px;
+    max-width: 237px;
+    
+}
+.flechas{
+    width: 60px;
 }
