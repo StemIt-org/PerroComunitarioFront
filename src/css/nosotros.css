@@ -1,12 +1,40 @@
-@media only screen and (min-width: 1000px) {
+/* @media only screen and (min-width: 1000px) {
     .container-nosotros {
-        margin-left: 50px;
-        margin-right: 50px;
+        margin-left: 100px;
+        margin-right: 100px;
     }
-}
+} */
 
 .titulo-nosotros {
     font-family: 'Montserrat', sans-serif;
     font-size: 30px;
     font-weight: bold;
+}
+
+.texto-nosotros{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    line-height: 25px;
+    font-weight: normal;
+    margin-top: 24px;
+}
+
+.footerImg-nosotros{
+    background: #ae4345;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+}
+.card-container{    
+}
+
+.card-nosotros-borde{
+    border-top-right-radius: 20px!important;
+    border-top-left-radius: 20px!important;
+}
+.texto-nosotros-borde{
+    border-bottom-right-radius: 20px!important;
+    border-bottom-left-radius: 20px!important;
+
 }
