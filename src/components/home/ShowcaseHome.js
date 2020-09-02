@@ -10,13 +10,13 @@ export default class ShowcaseComponent extends React.Component {
   render() {
     return (
       <div className="text-center colorFondoAdopcion-home borderRadius p-3 adopcion-home-container">
-        <Row className="mb-5">
+        <Row className="mb-4">
             <Col>
-                <Link to="/adopcion"> <h2 className="negrita txtDecorateNone">Perros en adopción</h2> </Link>
+                <Link to="/adopcion"> <h1 className="negrita txtDecorateNone">Perros en adopción</h1> </Link>
             </Col>
         </Row>
         <Row>
-          <Col>
+          <Col xs={12} lg={4}>
             <h2 className="negrita">Nombre</h2>
             <img
               src={require("../../assets/perro-adopcion-2.png")}
@@ -24,7 +24,7 @@ export default class ShowcaseComponent extends React.Component {
             />
             <p >Descripcion</p>
           </Col>
-          <Col>
+          <Col xs={12} lg={4}>
             <h2 className="negrita">Nombre</h2>
             <img
               src={require("../../assets/perro-adopcion-2.png")}
@@ -32,7 +32,7 @@ export default class ShowcaseComponent extends React.Component {
             />
             <p>Descripcion</p>
           </Col>
-          <Col>
+          <Col xs={12} lg={4}>
             <h2 className="negrita">Nombre</h2>
             <img
               src={require("../../assets/perro-adopcion-2.png")}

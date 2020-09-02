@@ -56,7 +56,12 @@ export default class ShowcaseComponent extends React.Component {
     items[ind] = true;
     this.setState({ paginaSeleccionada: items });
   };
+  /*scrollearHacia = ref => {
+    window.scrollTo(ref.current.offsetTop)
+  }*/
   render() {
+    //const myRef = useRef(null)
+    //const ejecutarScroll = () => this.scrollearHacia(myRef)
     return (
       <div className="text-center borderRadius noticias-container-home p-3 mt-5">
         <Row className="mb-5">
