@@ -19,7 +19,7 @@ function FooterComponent() {
             <p>QUE ONDA PADRE SOY UN FOOTER :d</p>
           </Col>
         </Row>
-        <p className="footer-link pb-3">Hecho por <a target="_blank" rel="noopener noreferrer" href="https://instagram.com/stem.it">Stem.it</a></p>
+        <p className="footer-link">Hecho por <a target="_blank" href="https://instagram.com/stem.it">Stem.it</a></p>
       </div>
     </>
   );
