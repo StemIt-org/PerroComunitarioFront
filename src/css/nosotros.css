@@ -1,0 +1,12 @@
+@media only screen and (min-width: 1000px) {
+    .container-nosotros {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+}
+
+.titulo-nosotros {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+}

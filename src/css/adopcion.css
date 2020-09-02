@@ -46,3 +46,7 @@
 .flechas{
     width: 60px;
 }
+
+.esquinas{
+    border-radius: 10px!important;
+}
