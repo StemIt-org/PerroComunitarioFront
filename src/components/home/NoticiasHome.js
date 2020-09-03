@@ -1,6 +1,7 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import {Link as ScrollLink } from "react-scroll"
 
 export default class ShowcaseComponent extends React.Component {
   // constructor() {
@@ -119,27 +120,31 @@ export default class ShowcaseComponent extends React.Component {
         </Row>
         <Row className="paginas-noticias justify-content-center">
           <Col lg={{ span: 1 }} className="mr-3">
-            <a
+            <ScrollLink
               onClick={() => this.setLinksPaginas(0)}
-              href="#tituloNoticiasHome"
+              to="tituloNoticiasHome"
+              smooth={true}
+              duration={1000}
               className={`linksPaginas ${
                 this.state.paginaSeleccionada[0] ? "colores-rojo-text" : ""
               }`}
             >
               Pagina1
-            </a>
+            </ScrollLink>
           </Col>
           {this.state.noticias.length > 6 && (
             <Col lg={{ span: 1 }} className="mr-3">
-              <a
+              <ScrollLink
                 onClick={() => this.setLinksPaginas(1)}
-                href="#tituloNoticiasHome"
+                to="tituloNoticiasHome"
+                smooth={true}
+                duration={1000}
                 className={`linksPaginas ${
                   this.state.paginaSeleccionada[1] ? "colores-rojo-text" : ""
                 }`}
               >
                 Pagina2
-              </a>
+              </ScrollLink>
             </Col>
           )}
           {this.state.noticias.length > 12 && (

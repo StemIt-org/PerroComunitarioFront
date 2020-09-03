@@ -19,9 +19,10 @@ export class CopiadorDeMail extends Component {
             </Popover>
           );
           
+          
           const Example = () => (
-            <OverlayTrigger trigger="click" placement="right" overlay={popover}>
-              <img onClick={copyToClipboard} className="footer-email" alt="Imagen Gmail" class="iconos" src={require("../assets/gmail-logo.png")}/>
+            <OverlayTrigger onClick={copyToClipboard} trigger="click" placement="right" overlay={popover}>
+              <img className="footer-email iconos" alt="Imagen Gmail"  src={require("../assets/gmail-logo.png")}/>
             </OverlayTrigger>
           );
 
