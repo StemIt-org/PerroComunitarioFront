@@ -1,5 +1,5 @@
 import React from "react";
-import {BrowserRouter, Switch, Route} from 'react-router-dom'
+import {BrowserRouter, Switch, Route, Redirect} from 'react-router-dom'
 
 
 // UI
@@ -13,6 +13,7 @@ import Adopcion from "./screens/adopcion"
 import Nosotros from "./screens/nosotros"
 import Contacto from "./screens/contacto"
 import Donar from "./screens/donar"
+import Notfound from "./screens/notfound"
 // ---
 
 export default class App extends React.Component {
@@ -23,11 +24,13 @@ export default class App extends React.Component {
         <NavbarComponent />
 
           <Switch>
-            <Route path="/adopcion" component={Adopcion} />
-            <Route path="/nosotros" component={Nosotros} />
-            <Route path="/contacto" component={Contacto} />
-            <Route path="/donar" component={Donar} />
+            <Redirect from="/home" to="/" />
+            <Route exact path="/adopcion" component={Adopcion} />
+            <Route exact path="/nosotros" component={Nosotros} />
+            <Route exact path="/contacto" component={Contacto} />
+            <Route exact path="/donar" component={Donar} />
             <Route exact path="/" component={Home} />
+            <Route path="*" component={Notfound} />
           </Switch>
 
         <FooterComponent /> 

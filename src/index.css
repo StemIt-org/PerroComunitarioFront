@@ -34,6 +34,13 @@ h1{
   font-size:30px;
   font-weight: bold;
 }
+.center{
+  text-align: center;
+}
+.mucho-padding{
+  padding-bottom: 20%;
+  padding-top: 10%;
+}
 .colores-rojo{
   background:var(--rojo)!important
 }
@@ -164,4 +171,14 @@ h1{
     color: transparent;
     content: "--";
   }
+}
+
+.fake-link{
+color: #007bff
+}
+.fake-link:hover{
+  color: #0056b3;
+  text-decoration: underline;
+  cursor: pointer;
+  user-select: none;
 }
