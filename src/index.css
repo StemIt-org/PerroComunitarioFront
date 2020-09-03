@@ -182,3 +182,6 @@ color: #007bff
   cursor: pointer;
   user-select: none;
 }
+.iconos{
+  max-width: 30px;
+}

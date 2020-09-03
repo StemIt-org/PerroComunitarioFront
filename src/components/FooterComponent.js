@@ -1,6 +1,6 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
-import CopiadorDeMail from './CopiadorDeMail'
+import CopiadorDeMail from "./CopiadorDeMail";
 function FooterComponent() {
   return (
     <>
@@ -15,22 +15,82 @@ function FooterComponent() {
               calles de Nuevo Delta Tigre
             </p>
           </Col>
-          <hr className="barra-footer"/>
-          <Col xs={2} lg={{offset: 1, span: 1}} >
+          <hr className="barra-footer" />
+          <Col xs={2} lg={{ offset: 1, span: 1 }}>
             <div className="titulo-contacto-footer"></div>
             <div className="espaciado-footer"></div>
             <CopiadorDeMail />
-            <a href="https://instagram.com/perrocomunitarioong" target="_blank" rel="noopener noreferrer"><p>Instagram</p></a>
-            <a href="https://www.facebook.com/Perro-Comunitario-Tigre-215869165180000/" target="_blank" rel="noopener noreferrer"><p>Facebook</p></a>
-            <a href="https://twitter.com/pcomunitarioong" target="_blank" rel="noopener noreferrer"><p>Twitter</p></a>
-            <a href="https://www.youtube.com/channel/UCq48j2MpfPWHI7ctRXuIWPQ" target="_blank" rel="noopener noreferrer"><p>YouTube</p></a>
+            <br />
+            <br />
+            <a
+              href="https://instagram.com/perrocomunitarioong"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                alt="Imagen Instagram"
+                className="iconos"
+                src={require("../assets/instagram-logo.png")}
+              />{" "}
+            </a>
+            <br />
+            <br />
+            <a
+              href="https://www.facebook.com/Perro-Comunitario-Tigre-215869165180000/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {" "}
+              <img
+                alt="Imagen Facebook"
+                className="iconos"
+                src={require("../assets/facebook-logo.png")}
+              />
+            </a>
+            <br />
+            <br />
+            <a
+              href="https://twitter.com/pcomunitarioong"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {" "}
+              <img
+                alt="Imagen Twitter"
+                className="iconos"
+                src={require("../assets/twitter-logo.png")}
+              />
+            </a>
+            <br />
+            <br />
+            <a
+              href="https://www.youtube.com/channel/UCq48j2MpfPWHI7ctRXuIWPQ"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {" "}
+              <img
+                alt="Imagen Youtube"
+                className="iconos"
+                src={require("../assets/youtube-logo.png")}
+              />
+            </a>
           </Col>
-          <hr className="barra-footer"/>
-          <Col xs={12} lg={6} >
+          <hr className="barra-footer" />
+          <Col xs={12} lg={6}>
             <p>SOY EL RESTO DEL FOOTER PADRE</p>
           </Col>
         </Row>
-        <p className="footer-link">Hecho por <a target="_blank" rel="noopener noreferrer" href="https://instagram.com/stem.it">Stem.it</a></p>
+        <p className="footer-link">
+          Hecho por{" "}
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://instagram.com/stem.it"
+          >
+            Stem.it
+          </a>
+        </p>
       </div>
     </>
   );
