@@ -1,5 +1,6 @@
 import React from 'react'
 import {Row,Col} from "react-bootstrap"
+import { Link } from "react-router-dom";
 
 export default class ListaAdopcion extends React.Component {
     render(){
@@ -11,6 +12,10 @@ export default class ListaAdopcion extends React.Component {
               <a href="/" alt="Flecha izquierda" className="flechas"><img src={require("../../assets/flecha-izq.png" )} alt="Flecha izquierda" />
               </a>
             <Col >
+            <Link
+              to="/adopcion/perro" 
+              className="links"
+            >
               <h2 className="negrita">Juana</h2>
               <img
                 src={require("../../assets/perro-adopcion-2.png")}
@@ -19,8 +24,13 @@ export default class ListaAdopcion extends React.Component {
               <p className="mt-4 ml-4 text-center">
                 Lo encontraron el otro dia en la calle y lo adoptaron
               </p>
+            </Link>
             </Col>
             <Col >
+            <Link
+              to="/adopcion/perro" 
+              className="links"
+            >
               <h2 className="negrita">Pelusa</h2>
               <img
                 src={require("../../assets/perro-adopcion-2.png")}
@@ -29,8 +39,13 @@ export default class ListaAdopcion extends React.Component {
               <p className="mt-4 ml-4 text-center">
                 Lo encontraron el otro dia en la calle y lo adoptaron
               </p>
+              </Link>
             </Col>
             <Col>
+            <Link
+              to="/adopcion/perro" 
+              className="links"
+            >
               <h2 className="negrita">Pamela</h2>
               <img
                 src={require("../../assets/perro-adopcion-2.png")}
@@ -39,6 +54,7 @@ export default class ListaAdopcion extends React.Component {
               <p className="mt-4 ml-4 text-center">
                 Lo encontraron el otro dia en la calle y lo adoptaron
               </p>
+              </Link>
             </Col>
               <a href="/" alt="Flecha Derecha" className="flechas"><img src={require("../../assets/flecha-der.png" )} alt="Flecha izquierda" />
               </a>
@@ -47,6 +63,10 @@ export default class ListaAdopcion extends React.Component {
               <a href="/" alt="Flecha izquierda" className="flechas"><img src={require("../../assets/flecha-izq.png" )} alt="Flecha izquierda" />
               </a>
             <Col >
+            <Link
+              to="/adopcion/perro" 
+              className="links"
+            >
               <h2 className="negrita">Juana</h2>
               <img
                 src={require("../../assets/perro-adopcion-2.png")}
@@ -55,8 +75,13 @@ export default class ListaAdopcion extends React.Component {
               <p className="ml-4 text-center mt-4">
                 Lo encontraron el otro dia en la calle y lo adoptaron
               </p>
+              </Link>
             </Col>
             <Col >
+            <Link
+              to="/adopcion/perro" 
+              className="links"
+            >
               <h2 className="negrita">Pelusa</h2>
               <img
                 src={require("../../assets/perro-adopcion-2.png")}
@@ -65,8 +90,13 @@ export default class ListaAdopcion extends React.Component {
               <p className="mt-4 ml-4 text-center">
                 Lo encontraron el otro dia en la calle y lo adoptaron
               </p>
+              </Link>
             </Col>
             <Col>
+            <Link
+              to="/adopcion/perro" 
+              className="links"
+            >
               <h2 className="negrita">Pamela</h2>
               <img
                 src={require("../../assets/perro-adopcion-2.png")}
@@ -76,6 +106,7 @@ export default class ListaAdopcion extends React.Component {
                 Lo encontraron el
                 otro dia en la calle y lo adoptaron
               </p>
+              </Link>
             </Col>
               <a href="/" alt="Flecha Derecha" className="flechas"><img src={require("../../assets/flecha-der.png" )} alt="Flecha izquierda" />
               </a>

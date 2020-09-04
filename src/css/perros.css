@@ -1,0 +1,25 @@
+p{
+    font-weight: normal;
+}
+.titulo-perros{
+    font-weight: bold;
+    font-size: 30px;
+}
+.descripcion-perros{
+    font-weight: bold;
+    font-size: 17px;
+}
+.boton-adoptar {
+    font-size: 30px !important;
+}
+.texto-contactanos{
+    font-weight: bold;
+    font-size: 15px;
+}
+.texto-contactanos a{
+   color: #DC4245;
+}
+
+.texto-contactanos a:hover{
+   color: #DC4245;
+}
