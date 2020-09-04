@@ -6,8 +6,10 @@ export default class Contacto extends React.Component {
   // }
 
   render() {
+    console.log("[PROPS] (CONTACTO)",this.props)
     return (
       <>
+      <p>{this.props.location.search && "CONSULTA SOBRE EL PERRO: "+this.props.location.search }</p>
       <RedesContacto />
       </>
     );

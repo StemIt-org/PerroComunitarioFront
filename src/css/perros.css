@@ -6,8 +6,10 @@ p{
     font-size: 30px;
 }
 .descripcion-perros{
-    font-weight: bold;
     font-size: 17px;
+}
+.titulo-descripcion-perros{
+    font-weight: bold;
 }
 .boton-adoptar {
     font-size: 30px !important;

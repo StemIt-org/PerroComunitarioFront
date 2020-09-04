@@ -27,7 +27,7 @@ export default class App extends React.Component {
           <Switch>
             <Redirect from="/home" to="/" />
             <Route exact path="/adopcion" component={Adopcion} />
-            <Route exact path="/adopcion/perro" component={Perros} />
+            <Route exact path="/adopcion/:perro" component={Perros} />
             <Route exact path="/nosotros" component={Nosotros} />
             <Route exact path="/contacto" component={Contacto} />
             <Route exact path="/donar" component={Donar} />
