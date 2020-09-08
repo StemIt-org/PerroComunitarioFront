@@ -3,6 +3,7 @@ import {Popover , OverlayTrigger} from 'react-bootstrap'
 export class CopiadorDeMail extends Component {
     render() {
         const copyToClipboard = () => {
+          console.log("COPIADOS!")
             const el = document.createElement('textarea');
             el.value = "perrocomunitario@gmail.com";
             document.body.appendChild(el);
@@ -21,8 +22,8 @@ export class CopiadorDeMail extends Component {
           
           
           const Example = () => (
-            <OverlayTrigger onClick={copyToClipboard} trigger="click" placement="right" overlay={popover}>
-              <img className="footer-email iconos" alt="Imagen Gmail"  src={require("../assets/gmail-logo.png")}/>
+            <OverlayTrigger trigger="click" placement="right" overlay={popover}>
+              <img className="footer-email iconos" alt="Imagen Gmail" onClick={copyToClipboard} src={require("../assets/gmail-logo.png")}/>
             </OverlayTrigger>
           );
 
