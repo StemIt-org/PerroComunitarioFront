@@ -1,5 +1,7 @@
 import React from "react";
 import RedesContacto from '../components/contacto/RedesContacto'
+import '../css/contacto.css';
+
 export default class Contacto extends React.Component {
   // constructor() {
   //   super()

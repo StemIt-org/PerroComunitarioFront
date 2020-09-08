@@ -1,0 +1,15 @@
+.container-donacion{
+    margin-left: 115px;
+    margin-right: 115px;
+}
+.titulo-donacion{
+    font-size: 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+.texto-donacion{
+    font-size: 20px;
+    line-height: 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: medium;
+}

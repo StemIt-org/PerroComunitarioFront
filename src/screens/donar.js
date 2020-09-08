@@ -1,4 +1,5 @@
 import React from "react";
+import '../css/donar.css';
 
 export default class Donar extends React.Component {
   // constructor() {
@@ -8,9 +9,10 @@ export default class Donar extends React.Component {
   render() {
     return (
       <>
-        <h1>Pagina Donar</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis fuga voluptas laudantium, pariatur sint repudiandae tenetur at minima in animi, debitis suscipit, quia porro dolorem eos accusantium doloremque exercitationem vitae.</p>
-
+        <div className="container-donacion">
+          <h1 className="titulo-donacion">Donaciones</h1>
+          <p className="texto-donacion">A través de tu donacion nos ayudas a seguir creciendo y salvando perritos la concha de tu madre si lees esto sos puto, no te das cuenta que es para rellenar texto la navideña concha de tu hermana:</p>
+        </div>
       </>
     );
   }

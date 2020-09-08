@@ -3,7 +3,6 @@ import {Popover , OverlayTrigger} from 'react-bootstrap'
 export class CopiadorDeMail extends Component {
     render() {
         const copyToClipboard = () => {
-          console.log("COPIADOS!")
             const el = document.createElement('textarea');
             el.value = "perrocomunitario@gmail.com";
             document.body.appendChild(el);
