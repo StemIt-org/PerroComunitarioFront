@@ -12,4 +12,32 @@
     line-height: 25px;
     font-family: 'Montserrat', sans-serif;
     font-weight: medium;
+    width:80%;
+}
+.campo-form{
+    background-color: #ececec; 
+    width: 40%;
+    border-radius: 20px;
+    align-items: center;
+}
+.campo-form img{
+    width: 30px;
+}
+.campo-form input{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    color: #848484;
+    border: none;
+    background-color: #ececec;
+}
+.campo-form input:focus{
+    outline:none;
+}
+.campo-submit-form{
+    background-color: #AE4345;
+}
+.campo-submit-form input{
+    color: white;
+    font-weight: bold;
+    background-color: #AE4345;
 }
