@@ -1,6 +1,5 @@
 import React from "react";
 import '../css/donar.css';
-import mercadopago from "../components/MercadoPago"
 export default class Donar extends React.Component {
   // constructor() {
   //   super()
