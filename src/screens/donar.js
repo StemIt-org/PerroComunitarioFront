@@ -1,6 +1,6 @@
 import React from "react";
 import '../css/donar.css';
-
+import mercadopago from "../components/MercadoPago"
 export default class Donar extends React.Component {
   // constructor() {
   //   super()
@@ -21,9 +21,13 @@ export default class Donar extends React.Component {
             alt="imagen mercadopago"
             style={{ width: "300px" }}
           />
-          <form action="" className="mb-5"  onSubmit="return false;">
+          <form method="POST" className="mb-5" onSubmit="return false;">
             <div className="campo-form p-3">
-              <img src={require("../assets/imagen-mail-form.png")} alt="Logo mail" className="ml-3 mr-4" />
+              <img
+                src={require("../assets/imagen-mail-form.png")}
+                alt="Logo mail"
+                className="ml-3 mr-4"
+              />
               <input
                 type="text"
                 id="mail-donar"
@@ -32,23 +36,22 @@ export default class Donar extends React.Component {
               />
             </div>
             <div className="campo-form mt-4 p-3">
-              <img src={require("../assets/imagen-dinero-form.png")} alt="Logo Donar" className="ml-3 mr-4" />
-              <input
-                type="number"
-                name="dinero"
-                placeholder="Monto a donar"
+              <img
+                src={require("../assets/imagen-dinero-form.png")}
+                alt="Logo Donar"
+                className="ml-3 mr-4"
               />
+              <input type="number" name="dinero" placeholder="Monto a donar" />
             </div>
             <div className="campo-form campo-submit-form mt-4 p-3">
               <input
-              className="ml-2"
+                className="ml-2"
                 type="submit"
                 name="dinero"
-                value= "Donar a Gonzalo Waisman"
+                value="Donar a Gonzalo Waisman"
               />
             </div>
           </form>
-          <div className=""></div>
         </div>
       </>
     );
