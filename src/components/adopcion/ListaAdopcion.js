@@ -1,15 +1,12 @@
-import React from "react";
+import React, { useState, useEffect} from "react";
 import { Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-export default class ListaAdopcion extends React.Component {
-  constructor(){
-    super();
-    this.state = {
-    hayPerrosDespues: true,
-    hayPerrosAntes: true,
-    i: 0,
-    perros: [
+export default function ListaAdopcion() {
+  const [index,setIndex] = useState(0)
+  const [hayPerrosAntes, setPerrosAntes] = useState(false)
+  const [hayPerrosDespues, setPerrosDespues] = useState(true)
+  const[perros] = useState([
       {
         nombre: "Juana",
         foto: require("../../assets/perro-adopcion-2.png"),
@@ -40,39 +37,34 @@ export default class ListaAdopcion extends React.Component {
         foto: require("../../assets/perro-adopcion-2.png"),
         descrip: "Lo encontraron el otro día en la calle y lo adoptaron",
       },
-    ],
+      {
+        nombre: "Frida",
+        foto: require("../../assets/perro-adopcion-2.png"),
+        descrip: "Lo encontraron el otro día en la calle y lo adoptaron",
+      },
+  ])
+  useEffect(() => { // Mostrar o no las flechitas en base a la cantidad de perros
+    if (index === 0) setPerrosAntes(false)
+    else setPerrosAntes(true)
+    if ((index + 1) * 3 < perros.length)
+      setPerrosDespues(true)
+    else setPerrosDespues(false)
+  },[index,setPerrosDespues,setPerrosAntes,perros])
 
-    }
-
-  }
-  componentDidUpdate() {
-    console.log(this.state.i);
-  }
-  updateFlechitas = () => {
-    console.log(this.state.i);
-    if (this.state.i === 0) this.setState({ hayPerrosAntes: false });
-    else this.setState({ hayPerrosAntes: true });
-    if ((this.state.i + 1) * 3 < this.state.perros.length)
-      this.setState({ hayPerrosDespues: false });
-    else this.setState({ hayPerrosDespues: true });
+  const perrosAnteriores = () => { // Mostrar tres perros anteriores
+    setIndex(index - 1)
   };
-  perrosAnteriores = () => {
-    this.setState((prevState) => ({ i: prevState.i - 1 }));
-    this.updateFlechitas();
+  const perrosPosteriores = () => { // Mostrar tres perros siguientes
+    setIndex(index + 1)
   };
-  perrosPosteriores = () => {
-    this.setState((prevState) => ({ i: prevState.i + 1 }));
-    this.updateFlechitas();
-  };
-  render() {
     return (
       <>
-        <h1 className="tituloAdopcion mb-4 mt-5">Perros en adopción:</h1>
+        <h1 className="tituloAdopcion mb-3 mt-5">Perros en adopción:</h1>
         <div className="text-center p-3 listaContainer">
-          <Row className="align-middle text-center align-items-center mb-5">
-            {this.state.hayPerrosAntes && ( // MOSTRAR PERROS ANTERIORES
+          <Row className="align-middle text-center align-items-center mb-3">
+            {hayPerrosAntes && ( // MOSTRAR PERROS ANTERIORES
               <div
-                onClick={this.perrosAnteriores}
+                onClick={perrosAnteriores}
                 alt="Flecha izquierda"
                 className="flechas"
               >
@@ -82,20 +74,20 @@ export default class ListaAdopcion extends React.Component {
                 />
               </div>
             )}
-            {this.state.perros // MOSTRAR LOS PERROS
-              .slice(this.state.i * 3, (this.state.i + 1) * 3)
+            {perros // MOSTRAR LOS PERROS
+              .slice(index * 3, (index + 1) * 3)
               .map((perro) => (
-                <Col key={perro.nombre}>
+                <Col key={perro.nombre} lg={3}>
                   <Link to={"/adopcion/" + perro.nombre} className="links">
                     <h2 className="negrita">{perro.nombre}</h2>
                     <img src={perro.foto} alt={`Imagen ${perro.nombre}`} />
-                    <p className="mt-4 ml-4 text-center">{perro.descrip}</p>
+                    <p className="mt-4 text-center">{perro.descrip}</p>
                   </Link>
                 </Col>
               ))}
-            {this.state.hayPerrosDespues && ( // BOTON PARA MOSTRAR SIGUIENTES PERROS
+            {hayPerrosDespues && ( // BOTON PARA MOSTRAR SIGUIENTES PERROS
               <div
-                onClick={this.perrosPosteriores}
+                onClick={perrosPosteriores}
                 alt="Flecha Derecha"
                 className="flechas"
               >
@@ -109,5 +101,4 @@ export default class ListaAdopcion extends React.Component {
         </div>
       </>
     );
-  }
 }
