@@ -43,8 +43,15 @@
     max-width: 237px;
     
 }
-.flechas{
+.flechaIzq{
     width: 60px;
+    position: absolute;
+    left:0;
+}
+.flechaDer{
+    width: 60px;
+    position: absolute;
+    right:0;    
 }
 
 .esquinas{
