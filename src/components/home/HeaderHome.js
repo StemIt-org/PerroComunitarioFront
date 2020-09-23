@@ -5,7 +5,6 @@ export default class HeaderComponent extends React.Component {
   // constructor() {
   //   super()
   // }
-
   render() {
     return (
       <>

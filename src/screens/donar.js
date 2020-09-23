@@ -22,7 +22,7 @@ export default class Donar extends React.Component {
   render() {
     return (
       <>
-        <div className="container-donacion">
+        <div className="container">
           <h1 className="titulo-donacion">Donaciones</h1>
           <p className="texto-donacion">
             A través de tu donacion nos ayudas a seguir creciendo y salvando

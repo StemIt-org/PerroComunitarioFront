@@ -18,7 +18,7 @@ export class CopiadorDeMail extends Component {
               </Popover.Content>
             </Popover>
           );
-          
+
           
           const Example = () => (
             <OverlayTrigger trigger="click" placement="right" overlay={popover}>

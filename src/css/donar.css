@@ -1,7 +1,3 @@
-.container-donacion{
-    margin-left: 115px;
-    margin-right: 115px;
-}
 .titulo-donacion{
     font-size: 30px;
     font-family: 'Montserrat', sans-serif;
@@ -12,13 +8,21 @@
     line-height: 25px;
     font-family: 'Montserrat', sans-serif;
     font-weight: medium;
-    width:80%;
+}
+@media (min-width: 992px) {
+    .texto-donacion{
+        width: 80%;
+    }
 }
 .campo-form{
     background-color: #ececec; 
-    width: 40%;
     border-radius: 20px;
     align-items: center;
+}
+@media (min-width: 992px) {
+    .campo-form{
+        width: 40%;
+    }
 }
 .campo-form img{
     width: 30px;
@@ -29,6 +33,7 @@
     color: #848484;
     border: none;
     background-color: #ececec;
+    width: 81%;
 }
 .campo-form input:focus{
     outline:none;
@@ -40,4 +45,15 @@
     color: white;
     font-weight: bold;
     background-color: #AE4345;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+}
+@media (max-width: 992px) {
+    .campo-form input{
+        width: 75%;
+    }
+    .campo-submit-form button {
+        text-align: center;
+    }
 }
