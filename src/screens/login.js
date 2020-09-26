@@ -1,14 +1,31 @@
 import React, { Component } from 'react'
-
+import axios from 'axios'
 export class Login extends Component {
     state={
         password: '',
-        email_o_user: ''
+        user: ''
     }
     Submit = (e) => {
         e.preventDefault();
+        const {user, password} = this.state
         console.log("Form submitted!", this.state)
-        //aca iria la funcion para loguearse, @Backend ponganse las pilas dale pa
+        console.log("User: ", user);
+        console.log("Password: ", password);
+        console.log(user+":"+password);
+        const userpass = user+':'+password
+        const encodedString = Buffer.from(userpass).toString('base64');
+        console.log("ENCODED: ",encodedString);
+        axios({
+            method: 'post',
+            url: 'http://35.211.3.86:3000/admin/login',
+            headers: {
+                Authorization: 'Basic ' + encodedString
+            }
+        }).then((resp)=> {
+            console.log(resp.data);
+            console.log("TOKEN: ", resp.data.token);
+            window.localStorage.setItem('token', resp.data.token)
+        }).catch((err)=>console.log(err))
     }
     Change = (e) => {
         this.setState({
@@ -20,7 +37,7 @@ export class Login extends Component {
             <div className="container center">
                 <form onSubmit={this.Submit}>
                     <div>
-                        <input type="text" id="email_o_user" onChange={this.Change} />
+                        <input type="text" id="user" name="usuario" onChange={this.Change} />
                     </div>
                     <div>
                         <input type="password" id="password" onChange={this.Change} />
