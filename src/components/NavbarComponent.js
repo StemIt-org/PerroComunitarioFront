@@ -32,6 +32,12 @@ export default class NavbarComponent extends React.Component {
                 to="/adopcion/Pelusa">
                   ADOPTAR PERRO (DESARROLLO)
                 </NavLink>
+                <NavLink
+                className="links"
+                activeClassName="active"
+                to="/login">
+                  LOGIN (DESARROLLO)
+                </NavLink>
 
                 <NavLink
                   className="links"

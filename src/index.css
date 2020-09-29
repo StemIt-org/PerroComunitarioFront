@@ -26,6 +26,10 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+.color-rojo{
+  color: var(--rojo)
+}
+
 /* ESTILOS GLOBALES*/
 img{
   width:100%;
