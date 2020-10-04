@@ -1,0 +1,14 @@
+.form-login svg{
+    margin-right: 20px;
+}
+
+.form-login .btn span{
+    font-size: 18px;
+    user-select: none;
+}
+.form-login .btn:hover{
+    color: #dcdcdc;
+}
+.form-login button{
+    user-select: none;
+}
