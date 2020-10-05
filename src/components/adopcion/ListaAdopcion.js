@@ -1,74 +1,52 @@
-import React, { useState, useEffect} from "react";
+import React from "react";
 import { Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import axios from 'axios'
-export default function ListaAdopcion() {
-  const [index,setIndex] = useState(0)
-  const [hayPerrosAntes, setPerrosAntes] = useState(false)
-  const [hayPerrosDespues, setPerrosDespues] = useState(true)
-  const [perros, setPerros] = useState([
-      // {
-      //   nombre: "Juana",
-      //   foto: require("../../assets/perro-adopcion-2.png"),
-      //   descrip: "Lo encontraron el otro día en la calle y lo adoptaron",
-      // },
-      // {
-      //   nombre: "Juanita",
-      //   foto: require("../../assets/perro-adopcion-2.png"),
-      //   descrip: "Lo encontraron el otro día en la calle y lo adoptaron",
-      // },
-      // {
-      //   nombre: "Shifu",
-      //   foto: require("../../assets/perro-adopcion-2.png"),
-      //   descrip: "Lo encontraron el otro día en la calle y lo adoptaron",
-      // },
-      // {
-      //   nombre: "Negro",
-      //   foto: require("../../assets/perro-adopcion-2.png"),
-      //   descrip: "Lo encontraron el otro día en la calle y lo adoptaron",
-      // },
-      // {
-      //   nombre: "Juancito",
-      //   foto: require("../../assets/perro-adopcion-2.png"),
-      //   descrip: "Lo encontraron el otro día en la calle y lo adoptaron",
-      // },
-      // {
-      //   nombre: "Frida",
-      //   foto: require("../../assets/perro-adopcion-2.png"),
-      //   descrip: "Lo encontraron el otro día en la calle y lo adoptaron",
-      // },
-  ])
-  useEffect(() => { // Mostrar o no las flechitas en base a la cantidad de perros
-    if (index === 0) setPerrosAntes(false)
-    else setPerrosAntes(true)
-    if ((index + 1) * 3 < perros.length)
-      setPerrosDespues(true)
-    else setPerrosDespues(false)
+export default class ListaAdopcion extends React.Component {
+  state = {
+    index:0,
+    hayPerrosAntes:false,
+    hayPerrosDespues:true,
+    perros:[
+      {
+        nombre:"Perrin",
+        perro_id:56,
+        personalidad:"Hola soy un lindo perro"
+      }
+    ]
+  }
+  
+  componentDidMount() { // Mostrar o no las flechitas en base a la cantidad de perros
+    if (this.state.index === 0) this.setState({perrosAntes:false})
+    else this.setState({perrosAntes:true})
+    if ((this.state.index + 1) * 3 < this.state.perros.length)
+      this.setState({hayPerrosDespues:true})
+    else this.setState({hayPerrosDespues:false})
     axios({
       method: 'GET',
       url: 'http://35.211.3.86:3000/user/mostrarPerros',
     }).then((resp)=> {
       console.log("DATA: ",resp);
-      setPerros(resp.data.data)
-      console.log("PERRO: ",perros);
+      this.setState({perros: resp.data.data})
+      console.log("PERRO: ",this.state.perros);
     })
+  }
 
-  },[index,setPerrosDespues,setPerrosAntes,perros])
-
-  const perrosAnteriores = () => { // Mostrar tres perros anteriores
-    setIndex(index - 1)
+  perrosAnteriores = () => { // Mostrar tres perros anteriores
+    this.setState(prevState=> ({ index: prevState.index - 1}))
   };
-  const perrosPosteriores = () => { // Mostrar tres perros siguientes
-    setIndex(index + 1)
+  perrosPosteriores = () => { // Mostrar tres perros siguientes
+    this.setState(prevState=> ({ index: prevState.index + 1}))
   };
+  render(){
     return (
       <>
         <h1 className="tituloAdopcion mb-3 mt-5">Perros en adopción:</h1>
         <div className="text-center p-3 listaContainer">
           <Row style={{position:"relative"}} className="align-middle d-flex justify-content-center text-center align-items-center mb-3">
-            {hayPerrosAntes && ( // MOSTRAR PERROS ANTERIORES
+            {this.state.hayPerrosAntes && ( // MOSTRAR PERROS ANTERIORES
               <div
-                onClick={perrosAnteriores}
+                onClick={this.perrosAnteriores}
                 alt="Flecha izquierda"
                 className="flechaIzq"
               >
@@ -78,8 +56,8 @@ export default function ListaAdopcion() {
                 />
               </div>
             )}
-            {perros // MOSTRAR LOS PERROS
-              .slice(index * 3, (index + 1) * 3)
+            {this.state.perros // MOSTRAR LOS PERROS
+              .slice(this.state.index * 3, (this.state.index + 1) * 3)
               .map((perro) => (
                 <Col key={perro.nombre} lg={3}>
                   <Link to={"/adopcion/" + perro.id_perro} className="links">
@@ -90,9 +68,9 @@ export default function ListaAdopcion() {
                   </Link>
                 </Col>
               ))}
-            {hayPerrosDespues && ( // BOTON PARA MOSTRAR SIGUIENTES PERROS
+            {this.state.hayPerrosDespues && ( // BOTON PARA MOSTRAR SIGUIENTES PERROS
               <div
-                onClick={perrosPosteriores}
+                onClick={this.perrosPosteriores}
                 alt="Flecha Derecha"
                 className="flechaDer"
               >
@@ -106,4 +84,6 @@ export default function ListaAdopcion() {
         </div>
       </>
     );
+
+  }
 }

@@ -42,7 +42,7 @@ export class Login extends Component {
                 <h1 className="titulo-donacion">Panel de administración</h1>
                 <p className="texto-donacion">
                     Solo podrán iniciar secion aquellas personas las cuales pertenezcan a la organización.
-                    Para más información, <Link to="/contacto"><span className="color-rojo" style={{ fontWeight: 'bold' }}>¡Contáctanos!</span></Link>
+                    Para más información, <Link to="/contacto"><span className="color-rojo" style={{ fontWeight: 'bold', textDecorationColor:"#c46869" }}>¡Contáctanos!</span></Link>
                 </p>
                 <form className="mb-5 form-login" onSubmit={this.Submit}>
                     <div className="campo-form p-3">

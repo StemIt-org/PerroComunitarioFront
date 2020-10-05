@@ -19,7 +19,7 @@ class Perros extends React.Component {
       if (data === undefined) {
         this.setState({ e404: true })
       }
-      this.setState({
+      else this.setState({
         ...data
       })
     }).catch((err) => {
