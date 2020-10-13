@@ -47,11 +47,19 @@
     font-size: 15px;
     margin-top: 10px;
   }
-  .adopcion-home-container img{
+  .adopcion-home-container img {
     max-width: 223px;
     max-height: 161px;
     object-fit: cover;
     border-radius: 10px;
+  }
+  .fake-img-showcase-home{
+    width: 223px;
+    height: 161px;
+    border-radius: 10px;
+    background-color: #8b3637;
+    margin-left: auto;
+    margin-right: auto;
   }
   .adopcion-home-container a, .adopcion-home-container a:hover{
     color: inherit!important;
