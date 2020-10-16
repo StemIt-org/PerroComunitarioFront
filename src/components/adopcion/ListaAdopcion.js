@@ -8,11 +8,11 @@ export default class ListaAdopcion extends React.Component {
     hayPerrosAntes:false,
     hayPerrosDespues:true,
     perros:[
-      {
-        nombre:"Perrin",
-        perro_id:56,
-        personalidad:"Hola soy un lindo perro"
-      }
+      // {
+      //   nombre:"Perrin",
+      //   perro_id:56,
+      //   personalidad:"Hola soy un lindo perro"
+      // }
     ]
   }
   

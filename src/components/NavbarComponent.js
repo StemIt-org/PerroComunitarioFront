@@ -23,8 +23,8 @@ export default class NavbarComponent extends React.Component {
               <NavLink
                 className="links"
                 activeClassName="active"
-                to="/404">
-                  404 (DESARROLLO)
+                to="/admin">
+                  PANEL DE ADMIN (DESARROLLO)
                 </NavLink>
                 <NavLink
                 className="links"

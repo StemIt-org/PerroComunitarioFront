@@ -16,6 +16,7 @@ import Donar from "./screens/donar"
 import Notfound from "./screens/notfound"
 import Perros from "./screens/perros"
 import Login from "./screens/login"
+import Admin from "./screens/admin"
 // ---
 
 export default class App extends React.Component {
@@ -34,6 +35,7 @@ export default class App extends React.Component {
             <Route exact path="/donar" component={Donar} />
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
+            <Route exact path="/admin" component={Admin} />
             <Route path="*" component={Notfound} />
           </Switch>
 

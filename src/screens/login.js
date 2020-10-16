@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import '../css/donar.css';
 import '../css/login.css';
 
 export class Login extends Component {
     state = {
         password: '',
-        user: ''
+        user: '',
+        logged: false
     }
     Submit = (e) => {
         e.preventDefault();
@@ -29,6 +30,7 @@ export class Login extends Component {
             console.log(resp.data);
             console.log("TOKEN: ", resp.data.token);
             window.localStorage.setItem('token', resp.data.token)
+            this.setState({logged: true})
         }).catch((err) => console.log(err))
     }
     Change = (e) => {
@@ -37,6 +39,12 @@ export class Login extends Component {
         })
     }
     render() {
+        if (this.state.logged){
+            this.setState({logged: false})
+            return(
+                <Redirect to="/admin" />
+            )
+        }
         return (
             <div className="container">
                 <h1 className="titulo-donacion">Panel de administración</h1>
