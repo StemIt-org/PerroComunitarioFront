@@ -1,27 +1,30 @@
-p{
-    font-weight: normal;
+p {
+	font-weight: normal;
 }
-.titulo-perros{
-    font-weight: bold;
-    font-size: 30px;
+.titulo-perros {
+	font-weight: bold;
+	font-size: 30px;
 }
-.descripcion-perros{
-    font-size: 17px;
+.descripcion-perros {
+	font-size: 17px;
 }
-.titulo-descripcion-perros{
-    font-weight: bold;
+.titulo-descripcion-perros {
+	font-weight: bold;
 }
 .boton-adoptar {
-    font-size: 30px !important;
+	font-size: 30px !important;
 }
-.texto-contactanos{
-    font-weight: bold;
-    font-size: 15px;
+.texto-contactanos {
+	font-weight: bold;
+	font-size: 15px;
 }
-.texto-contactanos a{
-   color: #DC4245;
+.texto-contactanos a {
+	color: #dc4245;
 }
 
-.texto-contactanos a:hover{
-   color: #DC4245;
+.texto-contactanos a:hover {
+	color: #dc4245;
+}
+.input-agregar-perro {
+	font-weight: bold;
 }
