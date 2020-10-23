@@ -1,24 +1,25 @@
 import React from "react";
 import "../../css/perros.css";
 import { Container, Row, Col, Button, Form } from "react-bootstrap";
+import sweetalert from 'sweetalert'
 // import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 // import { Link } from "react-router-dom";
 // import { Carousel } from "react-responsive-carousel";
 
-export default function AgregarPerro() {
+export default function AgregarNoticia() {
 	const [inputs, setInputs] = React.useState({
-		nombre: "",
-		edad: "",
-		pelo: "",
-		tamano: "",
-		personalidad: "",
-		sexo: "",
-		info: "",
-		sociabilidad: "",
-		tiempo: "",
+		titulo: "",
+		cuerpo: "",
 	});
-	const subir = () => {
-		console.log(inputs);
+	const subir = (e) => {
+		if (inputs.cuerpo !== "" && inputs.titulo !== ""){
+			e.preventDefault()
+			console.log(inputs);
+		}else{
+			// alert("falta una cosa")
+			sweetalert("Error!", "Para subir una noticia debes especificar un titulo y un cuerpo!", "warning")
+		}
+		
 	};
 	const handleInputChange = (e) => {
 		setInputs({ ...inputs, [e.target.id]: e.target.value });
@@ -29,7 +30,7 @@ export default function AgregarPerro() {
 				className="titulo-perros center mb-5"
 				style={{ textDecoration: "underline" }}
 			>
-				Agregar perro!
+				Agregar Noticia!
 			</h1>
 			<Container>
 				<Row>
@@ -59,143 +60,47 @@ export default function AgregarPerro() {
                             </Carousel> */}
 					</Col>
 					<Col>
-						<Form>
-							<Form.Group as={Row} controlId="nombre">
+						<Form onSubmit={subir}>
+							<Form.Group as={Row} controlId="titulo">
 								<Form.Label
 									className="input-agregar-perro"
 									column
 									sm="2"
 									lg="3"
 								>
-									Nombre:
+									Título:
 								</Form.Label>
 								<Col sm="10" lg="9">
 									<Form.Control
+										required
 										onChange={handleInputChange}
-										type="name"
-										placeholder="Nombre del perro"
+										type="text"
+										placeholder="Titulo de la noticia"
 									/>
 								</Col>
 							</Form.Group>
-							<Form.Group as={Row} controlId="edad">
+							<Form.Group as={Row} controlId="cuerpo">
 								<Form.Label
 									className="input-agregar-perro"
 									column
 									sm="2"
 									lg="3"
 								>
-									Edad:
+									Cuerpo:
 								</Form.Label>
 								<Col sm="10" lg="9">
 									<Form.Control
+										required
 										onChange={handleInputChange}
-										type="number"
-										placeholder="Edad"
+										// type="text"
+										type="text"
+										as="textarea"
+										rows={10}
+										placeholder="Cuerpo de la noticia"
 									/>
 								</Col>
 							</Form.Group>
-							<Form.Group as={Row} controlId="tamano">
-								<Form.Label
-									className="input-agregar-perro"
-									column
-									sm="2"
-									lg="3"
-								>
-									Tamaño:
-								</Form.Label>
-								<Col sm="10" lg="9">
-									<Form.Control
-										onChange={handleInputChange}
-										type="name"
-										placeholder="Tamaño"
-									/>
-								</Col>
-							</Form.Group>
-							<Form.Group as={Row} controlId="personalidad">
-								<Form.Label
-									className="input-agregar-perro"
-									column
-									sm="2"
-									lg="3"
-								>
-									Personailidad:
-								</Form.Label>
-								<Col sm="10" lg="9">
-									<Form.Control
-										onChange={handleInputChange}
-										type="name"
-										placeholder="Personalidad"
-									/>
-								</Col>
-							</Form.Group>
-							<Form.Group as={Row} controlId="sexo">
-								<Form.Label
-									className="input-agregar-perro"
-									column
-									sm="2"
-									lg="3"
-								>
-									Sexo:
-								</Form.Label>
-								<Col sm="10" lg="9">
-									<Form.Control
-										onChange={handleInputChange}
-										type="name"
-										placeholder="Sexo"
-									/>
-								</Col>
-							</Form.Group>
-							<Form.Group as={Row} controlId="info">
-								<Form.Label
-									className="input-agregar-perro"
-									column
-									sm="2"
-									lg="3"
-								>
-									Información médica:
-								</Form.Label>
-								<Col sm="10" lg="9">
-									<Form.Control
-										onChange={handleInputChange}
-										type="name"
-										placeholder="Información Medica"
-									/>
-								</Col>
-							</Form.Group>
-							<Form.Group as={Row} controlId="sociabilidad">
-								<Form.Label
-									className="input-agregar-perro"
-									column
-									sm="2"
-									lg="3"
-								>
-									Sociabilidad:
-								</Form.Label>
-								<Col sm="10" lg="9">
-									<Form.Control
-										onChange={handleInputChange}
-										type="name"
-										placeholder="Sociabilidad"
-									/>
-								</Col>
-							</Form.Group>
-							<Form.Group as={Row} controlId="tiempo">
-								<Form.Label
-									className="input-agregar-perro"
-									column
-									sm="2"
-									lg="3"
-								>
-									Tiempo en adopción:
-								</Form.Label>
-								<Col sm="10" lg="9">
-									<Form.Control
-										onChange={handleInputChange}
-										type="name"
-										placeholder="Tiempo en adopción"
-									/>
-								</Col>
-							</Form.Group>
+		
 							<div className="text-center">
 								{/* <Link to={"/contacto?perro=" + this.props.match.params.perro}> */}
 								<Button

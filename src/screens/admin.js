@@ -2,18 +2,19 @@ import React, { Component } from "react";
 import { Container } from "react-bootstrap";
 import { Redirect } from "react-router-dom";
 import AgregarPerro from "../components/admin/AgregarPerro";
+import AgregarNoticia from "../components/admin/AgregarNoticia";
 export class Admin extends Component {
 	state = {
 		dbRequest: false,
 		authed: false,
 	};
 	componentDidMount() {
-		setTimeout(() => {
+		// setTimeout(() => {
 			this.setState({
 				dbRequest: true,
 				authed: true,
 			});
-		}, 1000);
+		// }, 1000);
 	}
 	// aca la idea es que ponga una pantalla de carga y verifique si el usuario esta logueado, si lo está, que prosiga, si no lo esta, que apareza la pagina de login
 	render() {
@@ -27,6 +28,10 @@ export class Admin extends Component {
 						<hr />
 						<Container>
 							<AgregarPerro />
+						</Container>
+						<hr/>
+						<Container>
+							<AgregarNoticia />
 						</Container>
 					</div>
 				);
