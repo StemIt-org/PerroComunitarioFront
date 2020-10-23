@@ -15,6 +15,7 @@ export default function AgregarNoticia() {
 		if (inputs.cuerpo !== "" && inputs.titulo !== ""){
 			e.preventDefault()
 			console.log(inputs);
+			sweetalert("Noticia creada!", `Titulo: ${inputs.titulo} \nCuerpo: ${inputs.cuerpo}`, "success")
 		}else{
 			// alert("falta una cosa")
 			sweetalert("Error!", "Para subir una noticia debes especificar un titulo y un cuerpo!", "warning")

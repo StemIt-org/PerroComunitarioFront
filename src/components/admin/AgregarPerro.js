@@ -1,6 +1,7 @@
 import React from "react";
 import "../../css/perros.css";
 import { Container, Row, Col, Button, Form } from "react-bootstrap";
+import sweetalert from 'sweetalert'
 // import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 // import { Link } from "react-router-dom";
 // import { Carousel } from "react-responsive-carousel";
@@ -18,6 +19,8 @@ export default function AgregarPerro() {
 		tiempo: "",
 	});
 	const subir = () => {
+		const {nombre, edad, pelo, tamano, personalidad, sexo, info, sociabilidad, tiempo} = inputs
+		sweetalert("Agregar perro:", `Nombre: ${nombre}\nEdad: ${edad}\nPelo: ${pelo}\nTamaño: ${tamano}\nPersonalidad: ${personalidad}\nSexo: ${sexo}\nInformacion: ${info}\nSociabilidad: ${sociabilidad}\nTiempo en adopcion: ${tiempo}`)
 		console.log(inputs);
 	};
 	const handleInputChange = (e) => {
