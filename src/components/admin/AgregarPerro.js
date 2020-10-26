@@ -3,7 +3,7 @@ import "../../css/perros.css";
 import { Container, Row, Col, Button, Form } from "react-bootstrap";
 import sweetalert from 'sweetalert'
 // import axios from 'axios'
-import { post } from 'axios';
+import {post} from 'axios';
 
 // import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 // import { Link } from "react-router-dom";
@@ -11,49 +11,57 @@ import { post } from 'axios';
 
 export default function AgregarPerro() {
 	const [inputs, setInputs] = React.useState({
-		nombre: "",
-		edad: "",
-		pelo: "",
-		tamano: "",
-		personalidad: "",
-		sexo: "",
-		info: "",
-		sociabilidad: "",
-		tiempo: "",
-		imagen: "no"
+		nombre: null,
+		edad: null,
+		pelo: null,
+		tamano: null,
+		personalidad: null,
+		sexo: null,
+		info: null,
+		sociabilidad: null,
+		tiempo: null,
+		imagen: null
 	});
-	const subir = () => {
+	const subir = async () => {
 		var token = window.localStorage.getItem("token")
 		const { nombre, edad, pelo, tamano, personalidad, sexo, info, sociabilidad, tiempo, imagen } = inputs
 		sweetalert("Agregar perro:", `Nombre: ${nombre}\nEdad: ${edad}\nPelo: ${pelo}\nTamaño: ${tamano}\nPersonalidad: ${personalidad}\nSexo: ${sexo}\nInformacion: ${info}\nSociabilidad: ${sociabilidad}\nTiempo en adopcion: ${tiempo}\nImagen: ${imagen}`)
 		console.log(inputs);
 		const url = 'http://35.211.3.86:3000/admin/subirPerro';
 		const formData = new FormData();
-		formData.append('filee', imagen, `${nombre}.jpg`)
+		formData.append('filee', imagen)
 		formData.append('nombre', nombre)
-		formData.append('edad',edad )
+		formData.append('edad', edad)
 		formData.append('pelo', pelo)
 		formData.append('tamaño', tamano)
-		formData.append('personalidad',personalidad )
+		formData.append('personalidad', personalidad)
 		formData.append('sexo', sexo)
-		formData.append('info', info)
+		formData.append('ficha_medica', info)
 		formData.append('sociabilidad', sociabilidad)
-		formData.append('tiempo', tiempo)
+		formData.append('tiempo_ea', tiempo)
 		console.log("FORM DATA:", formData);
 		const config = {
 			headers: {
-				'content-type': 'multipart/form-data',
+				// 'content-type': 'multipart/form-data',
 				authorization: 'Bearer ' + token
 			}
 		}
-		post(url, formData,config)
+		// axios({
+		// 	method: 'POST',
+		// 	url: url,
+			
+		// })
+		post(url, formData, config)
+		.then((r)=>{
+			console.log(r);
+		}).catch((err)=> console.log(err))
 	};
 	const handleInputChange = (e) => {
 		setInputs({ ...inputs, [e.target.id]: e.target.value });
 	};
-	const onChange =(e) => {
-		setInputs({ ...inputs, imagen:e.target.files[0] });
-	  }
+	const onChange = (e) => {
+		setInputs({ ...inputs, imagen: e.target.files[0] });
+	}
 	return (
 		<>
 			<h1
@@ -119,7 +127,7 @@ export default function AgregarPerro() {
 								</Form.Label>
 								<Col sm="10" lg="9">
 									<Form.Control
-										min= {0}
+										min={0}
 										onChange={handleInputChange}
 										type="number"
 										placeholder="Edad"
@@ -157,6 +165,23 @@ export default function AgregarPerro() {
 										onChange={handleInputChange}
 										type="name"
 										placeholder="Personalidad"
+									/>
+								</Col>
+							</Form.Group>
+							<Form.Group as={Row} controlId="pelo">
+								<Form.Label
+									className="input-agregar-perro"
+									column
+									sm="2"
+									lg="3"
+								>
+									Pelo:
+								</Form.Label>
+								<Col sm="10" lg="9">
+									<Form.Control
+										onChange={handleInputChange}
+										type="name"
+										placeholder="Pelo"
 									/>
 								</Col>
 							</Form.Group>

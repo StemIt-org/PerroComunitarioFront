@@ -15,7 +15,7 @@ export default class ShowcaseComponent extends React.Component {
       url: 'http://35.211.3.86:3000/user/mostrarPerros',
     }).then((resp) => {
       console.log("DATA: ", resp);
-      this.setState({ perros: resp.data.data })
+      this.setState({ perros: resp.data.data.slice(0, 3) })
       console.log("PERRO: ", this.state.perros);
     }).catch((err) => {
       console.log(err);
@@ -38,7 +38,7 @@ export default class ShowcaseComponent extends React.Component {
                   <Link to={"/adopcion/" + perro.id_perro}><h2 className="negrita">{perro.nombre}</h2>
                   </Link>
                   <img
-                    src={require("../../assets/perro-adopcion-2.png")}
+                    src={`http://35.211.3.86:3000/${perro.imagen}`}
                     alt="Imagen Perro"
                   />
                   <div>
@@ -53,7 +53,7 @@ export default class ShowcaseComponent extends React.Component {
                   <Link to={"/adopcion/" + perro.id_perro}><h2 className="negrita">{perro.nombre}</h2>
                   </Link>
                   <img
-                    src={require("../../assets/perro-adopcion-2.png")}
+                    src={`http://35.211.3.86:3000/${perro.imagen}`}
                     alt="Imagen Perro"
                   />
                   <div>
@@ -68,7 +68,7 @@ export default class ShowcaseComponent extends React.Component {
                   <Link to={"/adopcion/" + perro.id_perro}><h2 className="negrita">{perro.nombre}</h2>
                   </Link>
                   <img
-                    src={require("../../assets/perro-adopcion-2.png")}
+                    src={`http://35.211.3.86:3000/${perro.imagen}`}
                     alt="Imagen Perro"
                   />
                   <div>

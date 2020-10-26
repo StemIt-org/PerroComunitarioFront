@@ -62,7 +62,10 @@ export default class ListaAdopcion extends React.Component {
                 <Col key={perro.nombre} lg={3}>
                   <Link to={"/adopcion/" + perro.id_perro} className="links">
                     <h2 className="negrita">{perro.nombre}</h2>
-                    <img src={require("../../assets/perro-adopcion-2.png")} alt={`Imagen ${perro.nombre}`} />
+                    <img 
+                    style={{height: '170px', objectFit: 'cover'}}
+                    src={`http://35.211.3.86:3000/${perro.imagen}` || "../../assets/perro-adopcion-2.png"}
+                    alt={`Imagen ${perro.nombre}`} />
                     {/* <img src={perro.foto} alt={`Imagen ${perro.nombre}`} /> */}
                     <p className="mt-4 text-center">{perro.personalidad}</p>
                   </Link>

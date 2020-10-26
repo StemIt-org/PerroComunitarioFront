@@ -3,7 +3,6 @@ import "../css/perros.css";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Link } from "react-router-dom";
-import { Carousel } from "react-responsive-carousel";
 import axios from "axios";
 import E404 from '../screens/notfound'
 class Perros extends React.Component {
@@ -36,29 +35,10 @@ class Perros extends React.Component {
           <Container>
             <Row>
               <Col lg={6}>
-                <Carousel
-                  autoPlay
-                  showArrows={false}
-                  showStatus={false}
-                  infiniteLoop
-                  stopOnHover
-                  dynamicHeight
-                  swipeable
-                  emulateTouch
-                >
-                  <div>
-                    <img
-                      alt="Imagen perro"
-                      src={require("../assets/perro-adopcion-1.png")}
-                    />
-                  </div>
-                  <div>
-                    <img
-                      alt="Imagen perro"
-                      src={require("../assets/perro-adopcion-2.png")}
-                    />
-                  </div>
-                </Carousel>
+                <img
+                  alt="Imagen perro"
+                  src={`http://35.211.3.86:3000/${this.state.imagen}`}
+                />
               </Col>
               <Col>
                 <h1 className="titulo-perros">Perro ID: {this.props.match.params.perro}</h1>
@@ -128,7 +108,7 @@ class Perros extends React.Component {
       } else {
         return (
           <div className="center">Cargando...</div>
-          )
+        )
       }
 
     }
