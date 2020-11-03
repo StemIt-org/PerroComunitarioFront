@@ -1,52 +1,50 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import {Link as ScrollLink } from "react-scroll"
-
+import { Link as ScrollLink } from "react-scroll"
+import axios from 'axios'
 export default class ShowcaseComponent extends React.Component {
-  // constructor() {
-  //   super()
-  // }
+
   state = {
     noticias: [
       {
         titulo: "La historia de Jorge",
-        imagen: "https://lecto.app/perfil_lisandro.ae79249c.webp",
+        imagen: "https://lecto.app/img/webp/perfil_lisandro.webp",
         descrip: "Lo encontraron en la calle y al otro dia lo adoptaron",
       },
       {
         titulo: "La historia de Carlos",
-        imagen: "https://lecto.app/perfil_lisandro.ae79249c.webp",
+        imagen: "https://lecto.app/img/webp/perfil_lisandro.webp",
         descrip: "Lo encontraron en la calle y al otro dia lo adoptaron",
       },
       {
         titulo: "La historia de Nicolas",
-        imagen: "https://lecto.app/perfil_lisandro.ae79249c.webp",
+        imagen: "https://lecto.app/img/webp/perfil_lisandro.webp",
         descrip: "Lo encontraron en la calle y al otro dia lo adoptaron",
       },
       {
         titulo: "La historia del Maestro Shifu",
-        imagen: "https://lecto.app/perfil_lisandro.ae79249c.webp",
+        imagen: "https://lecto.app/img/webp/perfil_lisandro.webp",
         descrip: "Lo encontraron en la calle y al otro dia lo adoptaron",
       },
       {
         titulo: "La historia del perro",
-        imagen: "https://lecto.app/perfil_lisandro.ae79249c.webp",
+        imagen: "https://lecto.app/img/webp/perfil_lisandro.webp",
         descrip: "Lo encontraron en la calle y al otro dia lo adoptaron",
       },
       {
         titulo: "La historia del perro",
-        imagen: "https://lecto.app/perfil_lisandro.ae79249c.webp",
+        imagen: "https://lecto.app/img/webp/perfil_lisandro.webp",
         descrip: "Lo encontraron en la calle y al otro dia lo adoptaron",
       },
       {
         titulo: "La historia del perro",
-        imagen: "https://lecto.app/perfil_lisandro.ae79249c.webp",
+        imagen: "https://lecto.app/img/webp/perfil_lisandro.webp",
         descrip: "Lo encontraron en la calle y al otro dia lo adoptaron",
       },
       {
         titulo: "La historia del perro",
-        imagen: "https://lecto.app/perfil_lisandro.ae79249c.webp",
+        imagen: "https://lecto.app/img/webp/perfil_lisandro.webp",
         descrip: "Lo encontraron en la calle y al otro dia lo adoptaron",
       },
     ],
@@ -57,21 +55,34 @@ export default class ShowcaseComponent extends React.Component {
     items[ind] = true;
     this.setState({ paginaSeleccionada: items });
   };
-  /*scrollearHacia = ref => {
-    window.scrollTo(ref.current.offsetTop)
-  }*/
+  componentDidMount = () => {
+    axios({
+      method: 'GET',
+      url: 'http://35.211.3.86:3000/user/mostrarNoticias'
+    }).then((resp)=>{
+      const data = resp.data.data
+      console.log(data);
+      // title
+      // image
+      // subtitle
+      // body
+      // date
+      this.setState({
+        data
+      })
+    }).catch((err)=>{
+      console.log(err);
+    })
+  }
   render() {
-    //const myRef = useRef(null)
-    //const ejecutarScroll = () => this.scrollearHacia(myRef)
     return (
       <div className="text-center borderRadius noticias-container-home p-3 mt-5">
         <Row className="mb-5">
           <Col>
             <Link to="/nosotros">
-              {" "}
               <h1 className="negrita txtDecorateNone" id="tituloNoticiasHome">
                 Noticias
-              </h1>{" "}
+              </h1>
             </Link>
           </Col>
         </Row>
@@ -125,9 +136,8 @@ export default class ShowcaseComponent extends React.Component {
               to="tituloNoticiasHome"
               smooth={true}
               duration={1000}
-              className={`linksPaginas ${
-                this.state.paginaSeleccionada[0] ? "colores-rojo-text" : ""
-              }`}
+              className={`linksPaginas ${this.state.paginaSeleccionada[0] ? "colores-rojo-text" : ""
+                }`}
             >
               Pagina1
             </ScrollLink>
@@ -139,9 +149,8 @@ export default class ShowcaseComponent extends React.Component {
                 to="tituloNoticiasHome"
                 smooth={true}
                 duration={1000}
-                className={`linksPaginas ${
-                  this.state.paginaSeleccionada[1] ? "colores-rojo-text" : ""
-                }`}
+                className={`linksPaginas ${this.state.paginaSeleccionada[1] ? "colores-rojo-text" : ""
+                  }`}
               >
                 Pagina2
               </ScrollLink>
@@ -152,9 +161,8 @@ export default class ShowcaseComponent extends React.Component {
               <a
                 onClick={() => this.setLinksPaginas(2)}
                 href="#tituloNoticiasHome"
-                className={`linksPaginas ${
-                  this.state.paginaSeleccionada[2] ? "colores-rojo-text" : ""
-                }`}
+                className={`linksPaginas ${this.state.paginaSeleccionada[2] ? "colores-rojo-text" : ""
+                  }`}
               >
                 Pagina3
               </a>
