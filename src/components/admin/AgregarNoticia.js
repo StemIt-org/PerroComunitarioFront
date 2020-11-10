@@ -1,29 +1,53 @@
 import React from "react";
 import "../../css/perros.css";
 import { Container, Row, Col, Button, Form } from "react-bootstrap";
-import sweetalert from 'sweetalert'
+import sweetalert from "sweetalert";
+import { post } from "axios";
 // import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 // import { Link } from "react-router-dom";
 // import { Carousel } from "react-responsive-carousel";
 
 export default function AgregarNoticia() {
 	const [inputs, setInputs] = React.useState({
-		titulo: "",
-		cuerpo: "",
+		title: "",
+		image: "",
+		subtitle: "",
+		body: "",
+		date: "",
 	});
-	const subir = (e) => {
-		if (inputs.cuerpo !== "" && inputs.titulo !== ""){
-			e.preventDefault()
-			console.log(inputs);
-			sweetalert("Noticia creada!", `Titulo: ${inputs.titulo} \nCuerpo: ${inputs.cuerpo}`, "success")
-		}else{
-			// alert("falta una cosa")
-			sweetalert("Error!", "Para subir una noticia debes especificar un titulo y un cuerpo!", "warning")
-		}
-		
+	const subir = async () => {
+		var token = window.localStorage.getItem("token");
+
+		const { title, image, subtitle, body, date } = inputs;
+		sweetalert(
+			"Agregar Noticia:",
+			`Titulo: ${title}\n Imagen: ${image}\n Subtitle: ${subtitle}\nBody: ${body}\n Date: ${date}`
+		);
+		console.log(inputs);
+		const url = "http://35.211.3.86:3000/admin/subirNoticia";
+		const formData = new FormData();
+		formData.append("filee", image);
+		formData.append("title", title);
+		formData.append("subtitle", subtitle);
+		formData.append("body", body);
+		formData.append("date", date);
+		console.log("FORM DATA:", formData);
+		const config = {
+			headers: {
+				authorization: "Bearer " + token,
+			},
+		};
+		post(url, formData, config)
+			.then((r) => {
+				console.log(r);
+			})
+			.catch((err) => console.log(err));
 	};
 	const handleInputChange = (e) => {
 		setInputs({ ...inputs, [e.target.id]: e.target.value });
+	};
+	const onChange = (e) => {
+		setInputs({ ...inputs, image: e.target.files[0] });
 	};
 	return (
 		<>
@@ -62,7 +86,7 @@ export default function AgregarNoticia() {
 					</Col>
 					<Col>
 						<Form onSubmit={subir}>
-							<Form.Group as={Row} controlId="titulo">
+							<Form.Group as={Row} controlId="title">
 								<Form.Label
 									className="input-agregar-perro"
 									column
@@ -80,7 +104,43 @@ export default function AgregarNoticia() {
 									/>
 								</Col>
 							</Form.Group>
-							<Form.Group as={Row} controlId="cuerpo">
+							<Form.Group as={Row} controlId="subtitle">
+								<Form.Label
+									className="input-agregar-perro"
+									column
+									sm="2"
+									lg="3"
+								>
+									Subtítulo:
+								</Form.Label>
+								<Col sm="10" lg="9">
+									<Form.Control
+										required
+										onChange={handleInputChange}
+										type="text"
+										placeholder="Subtitulo de la noticia"
+									/>
+								</Col>
+							</Form.Group>
+							<Form.Group as={Row} controlId="date">
+								<Form.Label
+									className="input-agregar-perro"
+									column
+									sm="2"
+									lg="3"
+								>
+									Fecha:
+								</Form.Label>
+								<Col sm="10" lg="9">
+									<Form.Control
+										required
+										onChange={handleInputChange}
+										type="date"
+										placeholder="Fecha de la noticia"
+									/>
+								</Col>
+							</Form.Group>
+							<Form.Group as={Row} controlId="body">
 								<Form.Label
 									className="input-agregar-perro"
 									column
@@ -101,7 +161,8 @@ export default function AgregarNoticia() {
 									/>
 								</Col>
 							</Form.Group>
-		
+							<input type="file" onChange={onChange} />
+
 							<div className="text-center">
 								{/* <Link to={"/contacto?perro=" + this.props.match.params.perro}> */}
 								<Button
