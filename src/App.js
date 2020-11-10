@@ -16,6 +16,7 @@ import Notfound from "./screens/notfound";
 import Perros from "./screens/perros";
 import Login from "./screens/login";
 import Admin from "./screens/admin";
+import Noticias from "./screens/noticias";
 import Noticia from "./screens/noticia";
 // ---
 
@@ -35,7 +36,8 @@ export default class App extends React.Component {
 						<Route exact path="/donar" component={Donar} />
 						<Route exact path="/" component={Home} />
 						<Route exact path="/login" component={Login} />
-						<Route exact path="/noticia" component={Noticia} />
+						<Route exact path="/noticias" component={Noticias} />
+						<Route exact path="/noticias/:noticia" component={Noticia} />
 						<Route exact path="/admin" component={Admin} />
 						<Route path="*" component={Notfound} />
 					</Switch>

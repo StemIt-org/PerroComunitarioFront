@@ -1,14 +1,10 @@
 import React from "react";
-import { Col, Row } from "react-bootstrap";
+import { Col, Row, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import axios from "axios";
-export default class ShowcaseComponent extends React.Component {
-	state = {
-		noticias: [],
-		paginaSeleccionada: [true, false, false],
-	};
-
-	componentDidMount = () => {
+export default function ListaNoticias() {
+	const [noticias, setNoticias] = React.useState(null);
+	React.useEffect(() => {
 		axios({
 			method: "GET",
 			url: "http://35.211.3.86:3000/user/mostrarNoticias",
@@ -20,32 +16,25 @@ export default class ShowcaseComponent extends React.Component {
 				// subtitle
 				// body
 				// date
-				console.log(data);
-				let noticias = this.state.noticias;
-				noticias.push(data);
-				this.setState({
-					noticias,
-				});
+				setNoticias([data]);
 			})
 			.catch((err) => {
 				console.log(err);
 			});
-	};
-	render() {
-		return (
+	}, []);
+	return (
+		<Container>
 			<div className="text-center borderRadius noticias-container-home p-3 mt-5">
 				<Row className="mb-5">
 					<Col>
-						<Link to="/nosotros">
-							<h1 className="negrita txtDecorateNone" id="tituloNoticiasHome">
-								Noticias
-							</h1>
-						</Link>
+						<h1 className="negrita txtDecorateNone" id="tituloNoticiasHome">
+							Noticias
+						</h1>
 					</Col>
 				</Row>
 				<Row className="mb-5 w-100">
-					{this.state.noticias.length >= 1 &&
-						this.state.noticias.slice(0, 6).map((noti, i) => {
+					{noticias &&
+						noticias.map((noti, i) => {
 							return (
 								<Col xs={12} lg={4} key={noti.id_noticias}>
 									<Link to={`/noticias/${noti.id_noticias}`}>
@@ -66,6 +55,6 @@ export default class ShowcaseComponent extends React.Component {
 						})}
 				</Row>
 			</div>
-		);
-	}
+		</Container>
+	);
 }

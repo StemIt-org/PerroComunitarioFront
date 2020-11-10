@@ -5,28 +5,7 @@ import axios from "axios";
 export default class ListaAdopcion extends React.Component {
 	state = {
 		index: 0,
-		perros: [
-			{
-				nombre: "Perrin",
-				perro_id: 56,
-				personalidad: "Hola soy un lindo perro",
-			},
-			{
-				nombre: "Perrin",
-				perro_id: 56,
-				personalidad: "Hola soy un lindo perro",
-			},
-			{
-				nombre: "Perrin",
-				perro_id: 56,
-				personalidad: "Hola soy un lindo perro",
-			},
-			{
-				nombre: "Perrin",
-				perro_id: 56,
-				personalidad: "Hola soy un lindo perro",
-			},
-		],
+		perros: [],
 	};
 
 	componentDidMount() {
