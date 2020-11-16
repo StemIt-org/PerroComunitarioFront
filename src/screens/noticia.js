@@ -23,6 +23,7 @@ export default function Noticia(props) {
 			.catch((err) => {
 				console.log(err);
 			});
+			// eslint-disable-next-line
 	}, []);
 
 	if (noticia) {
