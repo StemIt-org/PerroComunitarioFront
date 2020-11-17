@@ -81,7 +81,7 @@ class Perros extends React.Component {
                   </div>
                 </span>
                 <div className="text-center">
-                  <Link to={"/contacto?perro=" + this.props.match.params.perro}>
+                  <Link to={"/adoptar/" + this.props.match.params.perro}>
                     <Button
                       size="lg"
                       variant="danger"

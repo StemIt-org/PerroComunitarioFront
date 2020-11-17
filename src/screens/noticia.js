@@ -3,7 +3,7 @@ import axios from "axios";
 export default function Noticia(props) {
 	const [noticia, setNoticia] = React.useState(null);
 	React.useEffect(() => {
-		console.log(props);
+		// console.log(props);
 		axios({
 			method: "GET",
 			url:

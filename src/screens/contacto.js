@@ -3,16 +3,17 @@ import RedesContacto from '../components/contacto/RedesContacto'
 import '../css/contacto.css';
 
 export default class Contacto extends React.Component {
-  // constructor() {
-  //   super()
-  // }
-
+  state = {
+    hayPerro: false
+  }
+  componentDidMount = () => {
+    const txt = this.props.location.search;
+    console.log(txt);
+  }
   render() {
-    console.log("[PROPS] (CONTACTO)",this.props)
     return (
       <>
-      <p>{this.props.location.search && "CONSULTA SOBRE EL PERRO: "+this.props.location.search }</p>
-      <RedesContacto />
+        <RedesContacto />
       </>
     );
   }

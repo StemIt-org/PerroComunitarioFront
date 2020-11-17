@@ -18,6 +18,7 @@ import Login from "./screens/login";
 import Admin from "./screens/admin";
 import Noticias from "./screens/noticias";
 import Noticia from "./screens/noticia";
+import Adoptar from "./screens/adoptar";
 // ---
 
 export default class App extends React.Component {
@@ -31,6 +32,7 @@ export default class App extends React.Component {
 						<Redirect from="/home" to="/" />
 						<Route exact path="/adopcion" component={Adopcion} />
 						<Route exact path="/adopcion/:perro" component={Perros} />
+						<Route exact path="/adoptar/:perro" component={Adoptar} />
 						<Route exact path="/nosotros" component={Nosotros} />
 						<Route exact path="/contacto" component={Contacto} />
 						<Route exact path="/donar" component={Donar} />
