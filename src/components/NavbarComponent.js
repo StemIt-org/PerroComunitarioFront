@@ -26,7 +26,7 @@ export default class NavbarComponent extends React.Component {
 						<NavLink
 							className="links"
 							activeClassName="active"
-							to="/adopcion/2"
+							to="/adopcion/3"
 						>
 							ADOPTAR PERRO (DESARROLLO)
 						</NavLink>
