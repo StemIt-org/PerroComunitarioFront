@@ -6,10 +6,13 @@ import { Link } from "react-router-dom";
 export class adoptar extends Component {
 	state = {
 		perro: this.props.match.params.perro,
-		cargado: true,
+		cargado: false,
 		data: {
 			nombrePerro: "Cargando...",
 		},
+		form: {
+			nombre_perro: null
+		}
 
 	};
 	componentDidMount = () => {
@@ -31,6 +34,9 @@ export class adoptar extends Component {
 						data: {
 							nombrePerro: data.nombre,
 						},
+						form: {
+							nombre_perro: data.nombre
+						}
 					});
 			})
 			.catch((err) => {
@@ -39,11 +45,26 @@ export class adoptar extends Component {
 	};
 	send = (e) => {
 		e.preventDefault();
-		console.log(this.state);
+		console.log("DATA: ", this.state.form);
+		axios({
+			method: 'POST',
+			url: "http://35.211.3.86:3000/user/completarFormulario",
+			headers: {
+				'content-type': 'application/json'
+			},
+			data: {
+				...this.state.form
+			}
+		}).then((resp) => {
+			console.log(resp);
+		}).catch((err) => {
+			console.log(err);
+		})
 	};
 	change = (e) => {
 		this.setState({
 			form: {
+				...this.state.form,
 				[e.target.id]: e.target.value,
 			}
 		});
@@ -66,7 +87,7 @@ export class adoptar extends Component {
 					<div className="adopcion-container">
 						<Form onSubmit={this.send}>
 							<h3 className="center">Datos personales</h3>
-							<Form.Group as={Row} controlId="nombre_y_apellido">
+							<Form.Group as={Row} controlId="nombre_apellido">
 								<Form.Label column sm="2" xl="2">
 									<b>Nombre y Apellido:</b>
 								</Form.Label>
@@ -78,7 +99,7 @@ export class adoptar extends Component {
 									/>
 								</Col>
 							</Form.Group>
-							<Form.Group as={Row} controlId="formPlaintextEmail">
+							<Form.Group as={Row} controlId="nombre_perro">
 								<Form.Label column sm="2" xl="2">
 									<b>Perro a adoptar:</b>
 								</Form.Label>
@@ -90,7 +111,7 @@ export class adoptar extends Component {
 									/>
 								</Col>
 							</Form.Group>
-							<Form.Group as={Row} controlId="direccion">
+							<Form.Group as={Row} controlId="direc">
 								<Form.Label column sm="2" xl="2">
 									<b>Dirección:</b>
 								</Form.Label>
@@ -102,7 +123,7 @@ export class adoptar extends Component {
 									/>
 								</Col>
 							</Form.Group>
-							<Form.Group as={Row} controlId="telefono">
+							<Form.Group as={Row} controlId="tel">
 								<Form.Label column sm="2" xl="2">
 									<b>Telefono:</b>
 								</Form.Label>
@@ -114,7 +135,7 @@ export class adoptar extends Component {
 									/>
 								</Col>
 							</Form.Group>
-							<Form.Group as={Row} controlId="email">
+							<Form.Group as={Row} controlId="mail">
 								<Form.Label column sm="2" xl="2">
 									<b>Email:</b>
 								</Form.Label>
@@ -131,7 +152,7 @@ export class adoptar extends Component {
 							<hr />
 							<h3 className="center">Encuesta pre-adopción</h3>
 							<b style={{ textDecoration: 'underline', fontSize: '18px' }}>1. ¿En qué zona viven?</b>
-							<Form.Group as={Row} controlId="localidad">
+							<Form.Group as={Row} controlId="localidad1">
 								<Form.Label column sm="2" xl="2">
 									<b>Localidad</b>
 								</Form.Label>
@@ -143,7 +164,7 @@ export class adoptar extends Component {
 									/>
 								</Col>
 							</Form.Group>
-							<Form.Group as={Row} controlId="barrio">
+							<Form.Group as={Row} controlId="barrio1">
 								<Form.Label column sm="2" xl="2">
 									<b>Barrio</b>
 								</Form.Label>
@@ -156,7 +177,7 @@ export class adoptar extends Component {
 								</Col>
 							</Form.Group>
 							<br />
-							<Form.Group as={Row} controlId="personasencasa">
+							<Form.Group as={Row} controlId="casa_cant2">
 								<Form.Label column sm="2" xl="2">
 									<b style={{ textDecoration: 'underline', fontSize: '18px' }}>2. ¿Cuántos son en casa?</b>
 								</Form.Label>
@@ -168,7 +189,8 @@ export class adoptar extends Component {
 									/>
 								</Col>
 							</Form.Group>
-							<Form.Group as={Row} controlId="edades">
+
+							<Form.Group as={Row} controlId="edades2">
 								<Form.Label column sm="2" xl="2">
 									<b>¿Edades?</b>
 								</Form.Label>
@@ -180,7 +202,8 @@ export class adoptar extends Component {
 									/>
 								</Col>
 							</Form.Group>
-							<Form.Group as={Row} controlId="miembrosacuerdo">
+
+							<Form.Group as={Row} controlId="de_acuerdo2">
 								<Form.Label column sm="2" xl="2">
 									<b>
 										¿Están todos los miembros de la familia de acuerdo en
@@ -188,19 +211,21 @@ export class adoptar extends Component {
 									</b>
 								</Form.Label>
 								<Col sm="10" lg="10">
-								<fieldset>
+									<fieldset>
 										<Form.Check
 											type="radio"
 											label="Si"
-											id="miembrosacuerdo"
+											id="de_acuerdo2"
+											name="de_acuerdo2"
 											value="si"
 											onChange={this.change}
 										/>
 										<Form.Check
 											type="radio"
 											label="No"
-											id="miembrosacuerdo"
-											value= "no"
+											id="de_acuerdo2"
+											name="de_acuerdo2"
+											value="no"
 											onChange={this.change}
 										/>
 									</fieldset>
@@ -208,7 +233,7 @@ export class adoptar extends Component {
 							</Form.Group>
 							<br />
 							<b style={{ textDecoration: 'underline', fontSize: '18px' }}>3. En caso de no tener hijos:</b>
-							<Form.Group as={Row} controlId="llegadabebe">
+							<Form.Group as={Row} controlId="bebe3">
 								<Form.Label column sm="2" xl="2">
 									<b>
 										¿Existe la posibilidad de la llegada de u bebé a la familia
@@ -216,26 +241,28 @@ export class adoptar extends Component {
 									</b>
 								</Form.Label>
 								<Col sm="10" lg="10">
-								<fieldset>
+									<fieldset>
 										<Form.Check
 											type="radio"
 											label="Si"
-											id="llegadabebe"
+											id="bebe3"
+											name="bebe3"
 											value="si"
 											onChange={this.change}
 										/>
 										<Form.Check
 											type="radio"
 											label="No"
-											id="llegadabebe"
-											value= "no"
+											id="bebe3"
+											name="bebe3"
+											value="no"
 											onChange={this.change}
 										/>
 									</fieldset>
 								</Col>
 							</Form.Group>
 							<br />
-							<Form.Group as={Row} controlId="convivencia">
+							<Form.Group as={Row} controlId="bebe_x_perro4">
 								<Form.Label column sm="2" xl="2">
 									<b style={{ textDecoration: 'underline', fontSize: '18px' }}> 4. ¿Qué piensa de la convivencia de bebés con perros?</b>
 								</Form.Label>
@@ -247,7 +274,7 @@ export class adoptar extends Component {
 									/>
 								</Col>
 							</Form.Group>
-							<Form.Group as={Row} controlId="compatibilidad">
+							<Form.Group as={Row} controlId="compatibles4">
 								<Form.Label column sm="2" xl="2">
 									<b> ¿Cree que son compatibles?</b>
 								</Form.Label>
@@ -256,23 +283,23 @@ export class adoptar extends Component {
 										<Form.Check
 											type="radio"
 											label="Si"
-											name="formHorizontalRadios"
-											id="compatibilidad"
+											name="compatibles4"
+											id="compatibles4"
 											value="si"
 											onChange={this.change}
 										/>
 										<Form.Check
 											type="radio"
 											label="No"
-											name="formHorizontalRadios"
-											id="compatibilidad"
-											value= "no"
+											name="compatibles4"
+											id="compatibles4"
+											value="no"
 											onChange={this.change}
 										/>
 									</fieldset>
 								</Col>
 							</Form.Group>
-							<Form.Group as={Row} controlId="razoncompatibilidad">
+							<Form.Group as={Row} controlId="xq4">
 								<Form.Label column sm="2" xl="2">
 									<b>¿Por qué?</b>
 								</Form.Label>
@@ -286,7 +313,7 @@ export class adoptar extends Component {
 							</Form.Group>
 							<br />
 							<b style={{ textDecoration: 'underline', fontSize: '18px' }}>5. ¿Tienen algún animal en casa?</b>
-							<Form.Group as={Row} controlId="animalencasa">
+							<Form.Group as={Row} controlId="anima_casa5">
 								<Form.Label column sm="2" xl="2">
 									<b>Hablame un poco de ellos</b>
 								</Form.Label>
@@ -300,32 +327,46 @@ export class adoptar extends Component {
 							</Form.Group>
 							<br />
 							<b style={{ textDecoration: 'underline', fontSize: '18px' }}>6. Si no tienen ningún otro animal en casa:</b>
-							<Form.Group as={Row} controlId="tuvieronanimalencasa">
+							<Form.Group as={Row} controlId="tuvieron6">
 								<Form.Label column sm="2" xl="2">
 									<b>¿Los han tenido?</b>
 								</Form.Label>
 								<Col sm="10" lg="10">
-								<fieldset>
+									<fieldset>
 										<Form.Check
 											type="radio"
 											label="Si"
-											id="tuvieronanimalencasa"
+											id="tuvieron6"
+											name="tuvieron6"
 											value="si"
 											onChange={this.change}
 										/>
 										<Form.Check
 											type="radio"
 											label="No"
-											id="tuvieronanimalencasa"
-											value= "no"
+											id="tuvieron6"
+											name="tuvieron6"
+											value="no"
 											onChange={this.change}
 										/>
 									</fieldset>
 								</Col>
 							</Form.Group>
+							<Form.Group as={Row} controlId="tiempo_porque">
+								<Form.Label column sm="2" xl="2">
+									<b>¿Por cuanto tiempo y que pasó con ellos?</b>
+								</Form.Label>
+								<Col sm="10" lg="10">
+									<Form.Control
+										type="text"
+										placeholder=""
+										onChange={this.change}
+									/>
+								</Col>
+							</Form.Group>
 							<br />
 
-							<Form.Group as={Row} controlId="interesenanimal">
+							<Form.Group as={Row} controlId="xq_interes">
 								<Form.Label column sm="2" xl="2">
 									<b style={{ textDecoration: 'underline', fontSize: '18px' }}>7. ¿Por qué se intereso en este animal en particular?</b>
 								</Form.Label>
@@ -339,7 +380,7 @@ export class adoptar extends Component {
 							</Form.Group>
 							<br />
 
-							<Form.Group as={Row} controlId="dondevivira">
+							<Form.Group as={Row} controlId="hogar_animal8">
 								<Form.Label column sm="2" xl="2">
 									<b style={{ textDecoration: 'underline', fontSize: '18px' }}>8. ¿Dónde vivirá el animal (casa, departamento)?</b>
 								</Form.Label>
@@ -353,7 +394,7 @@ export class adoptar extends Component {
 							</Form.Group>
 							<br />
 
-							<Form.Group as={Row} controlId="vecinoencontra">
+							<Form.Group as={Row} controlId="anti_vecino9">
 								<Form.Label column sm="2" xl="2">
 									<b style={{ textDecoration: 'underline', fontSize: '18px' }}>
 										9. ¿Tiene algún vecino que esté especialmente en contra de
@@ -361,19 +402,21 @@ export class adoptar extends Component {
 									</b>
 								</Form.Label>
 								<Col sm="10" lg="10">
-								<fieldset>
+									<fieldset>
 										<Form.Check
 											type="radio"
 											label="Si"
-											id="vecinoencontra"
+											id="anti_vecino9"
+											name="anti_vecino9"
 											value="si"
 											onChange={this.change}
 										/>
 										<Form.Check
 											type="radio"
 											label="No"
-											id="vecinoencontra"
-											value= "no"
+											id="anti_vecino9"
+											name="anti_vecino9"
+											value="no"
 											onChange={this.change}
 										/>
 									</fieldset>
@@ -381,7 +424,7 @@ export class adoptar extends Component {
 							</Form.Group>
 							<br />
 
-							<Form.Group as={Row} controlId="mudanza">
+							<Form.Group as={Row} controlId="mudanza10">
 								<Form.Label column sm="2" xl="2">
 									<b style={{ textDecoration: 'underline', fontSize: '18px' }}>
 										10. ¿Existe la posibilidad de una mudanza en los próximos 5
@@ -389,25 +432,27 @@ export class adoptar extends Component {
 									</b>
 								</Form.Label>
 								<Col sm="10" lg="10">
-								<fieldset>
+									<fieldset>
 										<Form.Check
 											type="radio"
 											label="Si"
-											id="mudanza"
+											id="mudanza10"
+											name="mudanza10"
 											value="si"
 											onChange={this.change}
 										/>
 										<Form.Check
 											type="radio"
 											label="No"
-											id="mudanza"
-											value= "no"
+											id="mudanza10"
+											name="mudanza10"
+											value="no"
 											onChange={this.change}
 										/>
 									</fieldset>
 								</Col>
 							</Form.Group>
-							<Form.Group as={Row} controlId="mudanzanoanimales">
+							<Form.Group as={Row} controlId="animales_no10">
 								<Form.Label column sm="2" xl="2">
 									<b>En caso de que no acepten animales, ¿Como procedería?</b>
 								</Form.Label>
@@ -419,24 +464,26 @@ export class adoptar extends Component {
 									/>
 								</Col>
 							</Form.Group>
-							<Form.Group as={Row} controlId="irsedelpais">
+							<Form.Group as={Row} controlId="huida_pais10">
 								<Form.Label column sm="2" xl="2">
 									<b>En caso de mudarte o irte del país, ¿Te lo llevarías?</b>
 								</Form.Label>
 								<Col sm="10" lg="10">
-								<fieldset>
+									<fieldset>
 										<Form.Check
 											type="radio"
 											label="Si"
-											id="irsedelpais"
+											id="huida_pais10"
+											name="huida_pais10"
 											value="si"
 											onChange={this.change}
 										/>
 										<Form.Check
 											type="radio"
 											label="No"
-											id="irsedelpais"
-											value= "no"
+											name="huida_pais10"
+											id="huida_pais10"
+											value="no"
 											onChange={this.change}
 										/>
 									</fieldset>
@@ -444,7 +491,7 @@ export class adoptar extends Component {
 							</Form.Group>
 							<br />
 							<b style={{ textDecoration: 'underline', fontSize: '18px' }}>11. Si es una casa:</b>
-							<Form.Group as={Row} controlId="casacerrada">
+							<Form.Group as={Row} controlId="casa_cerrada11">
 								<Form.Label column sm="2" xl="2">
 									<b>
 										¿Está debidamente cerrada para que el animal no pueda
@@ -452,26 +499,28 @@ export class adoptar extends Component {
 									</b>
 								</Form.Label>
 								<Col sm="10" lg="10">
-								<fieldset>
+									<fieldset>
 										<Form.Check
 											type="radio"
 											label="Si"
-											id="casacerrada"
+											name="casa_cerrada11"
+											id="casa_cerrada11"
 											value="si"
 											onChange={this.change}
 										/>
 										<Form.Check
 											type="radio"
 											label="No"
-											id="casacerrada"
-											value= "no"
+											name="casa_cerrada11"
+											id="casa_cerrada11"
+											value="no"
 											onChange={this.change}
 										/>
 									</fieldset>
 								</Col>
 							</Form.Group>
 							<br />
-							<Form.Group as={Row} controlId="dormiranimal">
+							<Form.Group as={Row} controlId="cama_perro12">
 								<Form.Label column sm="2" xl="2">
 									<b style={{ textDecoration: 'underline', fontSize: '18px' }}>12. ¿Dónde dormirá el animal?</b>
 								</Form.Label>
@@ -484,7 +533,7 @@ export class adoptar extends Component {
 								</Col>
 							</Form.Group>
 							<br />
-							<Form.Group as={Row} controlId="tiemposolo">
+							<Form.Group as={Row} controlId="solo_perro13">
 								<Form.Label column sm="2" xl="2">
 									<b style={{ textDecoration: 'underline', fontSize: '18px' }}>13. ¿Cuánto tiempo pasará el animal solo en casa?</b>
 								</Form.Label>
@@ -497,7 +546,7 @@ export class adoptar extends Component {
 								</Col>
 							</Form.Group>
 							<br />
-							<Form.Group as={Row} controlId="cuidaranimal">
+							<Form.Group as={Row} controlId="vacacion_perro14">
 								<Form.Label column sm="2" xl="2">
 									<b style={{ textDecoration: 'underline', fontSize: '18px' }}>
 										14. En el período vacacional, ¿Quién cuidaría al animal?
@@ -512,7 +561,7 @@ export class adoptar extends Component {
 								</Col>
 							</Form.Group>
 							<br />
-							<Form.Group as={Row} controlId="comentario">
+							<Form.Group as={Row} controlId="comentario16">
 								<Form.Label column sm="2" xl="2">
 									<b style={{ textDecoration: 'underline', fontSize: '18px' }}>
 										15. ¿Desea añadir algún comentario sobre cualquier aspecto
@@ -529,7 +578,7 @@ export class adoptar extends Component {
 							</Form.Group>
 							<br />
 							<b style={{ color: 'red', fontSize: '20px', }}>En caso de querer adoptar un cachorro/a:</b>
-							<Form.Group as={Row} controlId="castracion">
+							<Form.Group as={Row} controlId="castracion_cachorrito15">
 								<Form.Label column sm="2" xl="2">
 									<b style={{ textDecoration: 'underline', fontSize: '18px' }}>
 										16. ¿Estas de acuerdo con la castración al cumplir los 6
@@ -537,21 +586,21 @@ export class adoptar extends Component {
 									</b>
 								</Form.Label>
 								<Col sm="10">
-								<fieldset>
+									<fieldset>
 										<Form.Check
 											type="radio"
 											label="Si"
-											name="formHorizontalRadios"
-											id="castracion"
+											name="castracion_cachorrito15"
+											id="castracion_cachorrito15"
 											value="si"
 											onChange={this.change}
 										/>
 										<Form.Check
 											type="radio"
 											label="No"
-											name="formHorizontalRadios"
-											id="castracion"
-											value= "no"
+											name="castracion_cachorrito15"
+											id="castracion_cachorrito15"
+											value="no"
 											onChange={this.change}
 										/>
 									</fieldset>
