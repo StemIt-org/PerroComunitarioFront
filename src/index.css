@@ -6,6 +6,9 @@
 .WARNING::after, .WARNING::before{
   content: " ⚠ ";
 }
+br,hr,img{
+  user-select: none!important;
+}
 /* SEPARADOR */
 
 input:-webkit-autofill,

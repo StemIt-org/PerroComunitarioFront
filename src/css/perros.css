@@ -4,6 +4,7 @@ p {
 .titulo-perros {
 	font-weight: bold;
 	font-size: 30px;
+	margin-bottom: 0px!important;
 }
 .descripcion-perros {
 	font-size: 17px;

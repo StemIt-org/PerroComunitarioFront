@@ -24,7 +24,7 @@ export default class ListaAdopcion extends React.Component {
 		return (
 			<>
 				<h1 className="tituloAdopcion mb-3 mt-5">Perros en adopción:</h1>
-				<div className="text-center p-3 listaContainer">
+				<div className="text-center p-3 listaContainer " style={{background: '#EEE', borderRadius: '20px'}}>
 					<Row
 						style={{ position: "relative" }}
 						className="align-middle d-flex justify-content-center text-center align-items-center mb-3"

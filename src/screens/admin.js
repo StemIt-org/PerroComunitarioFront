@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Container } from "react-bootstrap";
 import { Redirect } from "react-router-dom";
 import AgregarPerro from "../components/admin/AgregarPerro";
+import ListaPerros from "../components/admin/ListaPerros";
+import ListaNoticia from "../components/admin/ListaNoticia";
 import AgregarNoticia from "../components/admin/AgregarNoticia";
 // import axios from 'axios'
 export class Admin extends Component {
@@ -56,10 +58,14 @@ export class Admin extends Component {
 						<hr />
 						<Container>
 							<AgregarPerro />
+							<br/>
+							<ListaPerros />
 						</Container>
 						<hr />
 						<Container>
 							<AgregarNoticia />
+							<br/>
+							<ListaNoticia />
 						</Container>
 					</div>
 				);
