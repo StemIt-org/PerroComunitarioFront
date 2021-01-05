@@ -25,7 +25,6 @@ export default class ShowcaseComponent extends React.Component {
 	};
 	render() {
 		if (this.state.perros) {
-			console.log("LENGTH", this.state.perros.length);
 			return (
 				<div className="text-center colorFondoAdopcion-home borderRadius p-3 adopcion-home-container">
 					<Row className="mb-4">
