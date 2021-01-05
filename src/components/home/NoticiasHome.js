@@ -20,11 +20,8 @@ export default class ShowcaseComponent extends React.Component {
 				// subtitle
 				// body
 				// date
-				console.log(data);
-				let noticias = this.state.noticias;
-				noticias.push(data);
 				this.setState({
-					noticias,
+					noticias: data,
 				});
 			})
 			.catch((err) => {

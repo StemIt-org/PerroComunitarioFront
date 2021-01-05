@@ -16,7 +16,7 @@ export default function ListaNoticias() {
 				// subtitle
 				// body
 				// date
-				setNoticias([data]);
+				setNoticias(data);
 			})
 			.catch((err) => {
 				console.log(err);
@@ -38,10 +38,7 @@ export default function ListaNoticias() {
 							return (
 								<Col xs={12} lg={4} key={noti.id_noticias}>
 									<Link to={`/noticias/${noti.id_noticias}`}>
-										<div
-											className="w-100 border borderRadius p-5 mb-5 "
-											onClick={console.log("DOU")}
-										>
+										<div className="w-100 border borderRadius p-5 mb-5 ">
 											<h2 className="negrita">{noti.title}</h2>
 											<img
 												src={`http://35.211.3.86:3000/${noti.image}`}
