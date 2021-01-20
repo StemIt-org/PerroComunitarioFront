@@ -20,6 +20,7 @@ export default function AgregarNoticia() {
 	const subir = async () => {
 		setLgShow(false)
 		var token = window.localStorage.getItem("token");
+		sweetalert("Subiendo", "Subiendo noticia a la base de datos, espere", "info")
 
 		const { title, image, subtitle, body, date } = inputs;
 		// sweetalert(

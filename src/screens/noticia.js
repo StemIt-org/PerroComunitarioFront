@@ -40,6 +40,7 @@ export default function Noticia(props) {
 						</Col>
 						<Col>
 							<h1 className="titulo-perros">{noticia.title}</h1>
+							<h4 className="subtitulo-perros">{noticia.subtitle}</h4>
 							<span
 								aria-label="Descripcion Perro"
 								role="img"
@@ -47,7 +48,7 @@ export default function Noticia(props) {
 							>
 								<br />
 								<div className="perro-campo">
-									<span style={{ fontWeight: "bold" }}>{noticia.body}</span>
+									<span style={{ fontWeight: "normal" }}>{noticia.body}</span>
 								</div>
 							</span>
 						</Col>

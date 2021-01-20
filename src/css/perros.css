@@ -6,6 +6,9 @@ p {
 	font-size: 30px;
 	margin-bottom: 0px!important;
 }
+.subtitulo-perros{
+	color: gray
+}
 .descripcion-perros {
 	font-size: 17px;
 }

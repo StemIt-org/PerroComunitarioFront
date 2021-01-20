@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Container } from "react-bootstrap";
 import { Redirect } from "react-router-dom";
+import "../css/admin.css"
 import AgregarPerro from "../components/admin/AgregarPerro";
 import ListaPerros from "../components/admin/ListaPerros";
 import ListaNoticia from "../components/admin/ListaNoticia";

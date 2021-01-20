@@ -202,3 +202,8 @@ color: #007bff
 .iconos{
   max-width: 30px;
 }
+
+/* NAVBAR */
+.links{
+  padding: .5rem 1rem;
+}

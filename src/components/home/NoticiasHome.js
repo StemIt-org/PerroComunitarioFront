@@ -55,7 +55,7 @@ export default class ShowcaseComponent extends React.Component {
 												src={`http://35.211.3.86:3000/${noti.image}`}
 												alt="imagen del perro en adopcion"
 											/>
-											<p className="text-center">{noti.body}</p>
+											<p className="text-center">{noti.subtitle}</p>
 										</div>
 									</Link>
 								</Col>

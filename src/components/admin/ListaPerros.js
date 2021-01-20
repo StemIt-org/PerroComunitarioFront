@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Card, Button, Row, Col } from "react-bootstrap";
-
+import {Link} from "react-router-dom"
 export class ListaPerros extends Component {
   state = {
     perros: null,
@@ -19,13 +19,13 @@ export class ListaPerros extends Component {
 
   render() {
     return (
-      <Row className="center">
+      <Row className="center carta-container" noGutters={true}>
         {this.state.perros &&
           this.state.perros.map((perro) => {
             return (
-              <Col xs={12} sm={6} lg={3} xl={4}>
+              <Col xs={12} sm={6} md={4} xl={3}>
                 <Card
-                  style={{ width: "14rem", margin: "10px", }}
+                  style={{  margin: "10px", width: "14rem",}}
                   key={perro.id_perro}
                 >
                   <Card.Img
@@ -38,7 +38,7 @@ export class ListaPerros extends Component {
                     }}
                   />
                   <Card.Body>
-                    <Card.Title>{perro.nombre}</Card.Title>
+                    <Card.Title><Link to={`/adopcion/${perro.id_perro}`}>{perro.nombre}</Link></Card.Title>
                     <Button variant="secondary">Editar</Button>
                   </Card.Body>
                 </Card>

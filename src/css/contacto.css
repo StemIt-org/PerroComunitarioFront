@@ -42,6 +42,11 @@
     text-align: left;
     margin-bottom: 0.5rem!important;
 }
+@media only screen and (max-width: 768px){
+    .texto-contacto{
+        font-size: 14px;
+    }
+}
 .face{
     margin-left: 34px!important;
 }
