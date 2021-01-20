@@ -41,6 +41,36 @@
 .campo-submit-form{
     background-color: #AE4345;
 }
+
+.campo-donar{
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+
+}
+
+.otro-monto-clicked {
+    background-color:  #AE4345 !important;
+}
+
+.boton-donar-not-clicked{
+    font-size: x-large !important;
+    height: 100px;
+    width: 120px;
+    background-color: #ececec!important;
+    border-radius: 20px !important;
+}
+
+.boton-donar-clicked{
+    font-size: x-large !important;
+    font-weight: bold !important;
+    height: 100px;
+    width: 120px;
+    background-color: #AE4345 !important;
+    border-radius: 20px !important;
+    color: white !important;
+}
 .campo-submit-form button{
     color: white;
     font-weight: bold;
