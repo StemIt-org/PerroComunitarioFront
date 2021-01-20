@@ -19,39 +19,35 @@ export default class NavbarComponent extends React.Component {
 				{/* los colores del active y links estan en el index.css*/}
 				<Navbar.Toggle aria-controls="basic-navbar-nav" />
 				<Navbar.Collapse id="basic-navbar-nav">
-					<Nav className="ml-auto">
-						<NavLink className="links" activeClassName="active" to="/admin">
-							PANEL DE ADMIN (DESARROLLO)
-						</NavLink>
-						<NavLink
-							className="links"
-							activeClassName="active"
-							to="/adopcion/3"
-						>
-							ADOPTAR PERRO (DESARROLLO)
-						</NavLink>
-						<NavLink className="links" activeClassName="active" to="/noticias">
-							NOTICIAS (DESARROLLO)
-						</NavLink>
-						<NavLink className="links" activeClassName="active" to="/login">
-							LOGIN (DESARROLLO)
-						</NavLink>
-
-						<NavLink className="links" activeClassName="active" exact to="/">
-							Inicio
-						</NavLink>
-						<NavLink className="links" activeClassName="active" to="/adopcion">
-							Perros en Adopción
-						</NavLink>
-						<NavLink className="links" activeClassName="active" to="/nosotros">
-							Nosotros
-						</NavLink>
-						<NavLink className="links" to="/donar">
-							Donar
-						</NavLink>
-						<NavLink className="links" activeClassName="active" to="/contacto">
-							Contacto
-						</NavLink>
+					<Nav className="ml-auto" style={{display: 'flex', justifyContent: 'space-between', width: '100%'}}>
+						<div>
+							<NavLink className="links" activeClassName="active" to="/admin">
+								PANEL DE ADMIN 
+							</NavLink>
+							{/* <NavLink className="links" activeClassName="active" to="/noticias">
+								NOTICIAS (DESARROLLO)
+							</NavLink> */}
+							<NavLink className="links" activeClassName="active" to="/login">
+								LOGIN
+							</NavLink>
+						</div>
+						<div>
+							<NavLink className="links" activeClassName="active" exact to="/">
+								Inicio
+							</NavLink>
+							<NavLink className="links" activeClassName="active" to="/adopcion">
+								Perros en Adopción
+							</NavLink>
+							<NavLink className="links" activeClassName="active" to="/nosotros">
+								Nosotros
+							</NavLink>
+							<NavLink className="links" to="/donar">
+								Donar
+							</NavLink>
+							<NavLink className="links" activeClassName="active" to="/contacto">
+								Contacto
+							</NavLink>
+						</div>
 					</Nav>
 				</Navbar.Collapse>
 				<br />

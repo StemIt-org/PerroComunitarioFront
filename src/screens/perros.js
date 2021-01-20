@@ -41,7 +41,7 @@ class Perros extends React.Component {
                 />
               </Col>
               <Col>
-                <h1 className="titulo-perros">Perro ID: {this.props.match.params.perro}</h1>
+                <h1 className="titulo-perros">{this.state.nombre}</h1>
                 <span aria-label="Descripcion Perro" role="img" className="descripcion-perros">
                   <div className="perro-campo">
                     <span className="titulo-descripcion-perros">Nombre: </span>

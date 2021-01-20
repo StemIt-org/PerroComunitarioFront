@@ -13,7 +13,7 @@ export class ListaNoticia extends Component {
 			.then((resp) => {
 				const data = resp.data.data;
 				this.setState({
-                    noticias: [data]
+                    noticias: data
                 })
 			})
 			.catch((err) => {
@@ -21,7 +21,6 @@ export class ListaNoticia extends Component {
 			});
     }
     render() {
-        console.log(this.state);
         return (
             <Row>
                 {this.state.noticias && this.state.noticias.map(noticia => {

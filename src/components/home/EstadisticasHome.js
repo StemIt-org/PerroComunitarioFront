@@ -13,9 +13,7 @@ export default class EstadisticasComponent extends React.Component {
         <div className="text-center colorFondoEstadisticas-home borderRadius p-3 estadisticas-home-container">
           <Row className="mb-5">
             <Col>
-              <Link to="/nosotros">
-                <h2 className="negrita">Estadisticas</h2>
-              </Link>
+              <h2 className="negrita">Estadisticas</h2>
 
             </Col>
           </Row>

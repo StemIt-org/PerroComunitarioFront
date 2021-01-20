@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 export default class ShowcaseComponent extends React.Component {
 	state = {
-		noticias: [],
+		noticias: null,
 		paginaSeleccionada: [true, false, false],
 	};
 
@@ -20,11 +20,8 @@ export default class ShowcaseComponent extends React.Component {
 				// subtitle
 				// body
 				// date
-				console.log(data);
-				let noticias = this.state.noticias;
-				noticias.push(data);
 				this.setState({
-					noticias,
+					noticias: data,
 				});
 			})
 			.catch((err) => {
@@ -44,8 +41,9 @@ export default class ShowcaseComponent extends React.Component {
 					</Col>
 				</Row>
 				<Row className="mb-5 w-100">
-					{this.state.noticias.length >= 1 &&
+					{this.state.noticias &&
 						this.state.noticias.slice(0, 6).map((noti, i) => {
+							console.log("hola", noti);
 							return (
 								<Col xs={12} lg={4} key={noti.id_noticias}>
 									<Link to={`/noticias/${noti.id_noticias}`}>
