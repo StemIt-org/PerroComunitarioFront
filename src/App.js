@@ -19,6 +19,7 @@ import Admin from "./screens/admin";
 import Noticias from "./screens/noticias";
 import Noticia from "./screens/noticia";
 import Adoptar from "./screens/adoptar";
+import Debug from "./screens/debug";
 // ---
 
 export default class App extends React.Component {
@@ -41,6 +42,7 @@ export default class App extends React.Component {
 						<Route exact path="/noticias" component={Noticias} />
 						<Route exact path="/noticias/:noticia" component={Noticia} />
 						<Route exact path="/admin" component={Admin} />
+						<Route exact path="/debug" component={Debug} />
 						<Route path="*" component={Notfound} />
 					</Switch>
 

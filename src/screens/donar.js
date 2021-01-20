@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from 'react-dom';
 import '../css/donar.css';
 import {post} from 'axios';
-import ScriptTag from 'react-script-tag';
+// import ScriptTag from 'react-script-tag';
 
 
 
@@ -70,7 +70,7 @@ export default class Donar extends React.Component {
     this.setState({
       [e.target.id]: e.target.value,
     })
-    if(e.target.id == "monto"){
+    if(e.target.id === "monto"){
       this.setState({
         otro_monto:e.target.value
       })
@@ -121,7 +121,7 @@ export default class Donar extends React.Component {
               </button>
             </div>
             <div>
-              <a class="campo-form campo-submit-form mt-4 p-3" style={{display:this.state.fetched?"block":"none",color:"white",fontWeight:"bold"}} href={this.state.init_point} target="_blank">Pagar</a>
+              <a class="campo-form campo-submit-form mt-4 p-3" style={{display:this.state.fetched?"block":"none",color:"white",fontWeight:"bold"}} href={this.state.init_point} target="_blank" rel="noopener noreferrer">Pagar</a>
             </div>
             
             

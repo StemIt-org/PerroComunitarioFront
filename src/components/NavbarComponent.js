@@ -20,18 +20,8 @@ export default class NavbarComponent extends React.Component {
 				<Navbar.Toggle aria-controls="basic-navbar-nav" />
 				<Navbar.Collapse id="basic-navbar-nav">
 					<Nav className="ml-auto">
-						<NavLink className="links" activeClassName="active" to="/admin">
-							PANEL DE ADMIN (DESARROLLO)
-						</NavLink>
-						<NavLink
-							className="links"
-							activeClassName="active"
-							to="/adopcion/3"
-						>
-							ADOPTAR PERRO (DESARROLLO)
-						</NavLink>
-						<NavLink className="links" activeClassName="active" to="/noticias">
-							NOTICIAS (DESARROLLO)
+						<NavLink className="links" activeClassName="active" to="/debug">
+							LINKS DESARROLLO
 						</NavLink>
 						<NavLink className="links" activeClassName="active" to="/login">
 							LOGIN (DESARROLLO)

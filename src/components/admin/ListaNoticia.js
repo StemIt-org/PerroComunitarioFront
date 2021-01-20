@@ -11,9 +11,10 @@ export class ListaNoticia extends Component {
 			url: "http://35.211.3.86:3000/user/mostrarNoticias",
 		})
 			.then((resp) => {
-				const data = resp.data.data;
+                const data = resp.data.data;
+                console.log(data);
 				this.setState({
-                    noticias: [data]
+                    noticias: data
                 })
 			})
 			.catch((err) => {
@@ -21,7 +22,7 @@ export class ListaNoticia extends Component {
 			});
     }
     render() {
-        console.log(this.state);
+        console.log("NOTICIAs:", this.state);
         return (
             <Row>
                 {this.state.noticias && this.state.noticias.map(noticia => {

@@ -67,7 +67,7 @@ export default function AgregarNoticia() {
 			>
 				Noticias
 			</h1>
-			<div className="float-right">
+			<div className="float-right" style={{marginTop:'10px', marginBottom:"10px"}}>
 				<Button variant="danger" onClick={() => setLgShow(true)}>Agregar noticia!</Button>
 			</div>
 			<br />
