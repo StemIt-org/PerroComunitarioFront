@@ -38,13 +38,13 @@ export default function ListaNoticias() {
 							return (
 								<Col xs={12} lg={4} key={noti.id_noticias}>
 									<Link to={`/noticias/${noti.id_noticias}`}>
-										<div className="w-100 border borderRadius p-5 mb-5 ">
+										<div className="w-100 border borderRadius p-2 mb-5 ">
 											<h2 className="negrita">{noti.title}</h2>
 											<img
 												src={`http://35.211.3.86:3000/${noti.image}`}
 												alt="imagen del perro en adopcion"
 											/>
-											<p className="text-center">{noti.body}</p>
+											<p className="text-center">{noti.subtitle}</p>
 										</div>
 									</Link>
 								</Col>

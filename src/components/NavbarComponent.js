@@ -78,8 +78,8 @@ export default class NavbarComponent extends React.Component {
         <Navbar.Toggle onClick={()=>this.switch()}/>
         <Navbar.Collapse>
           <Nav className="mr-auto">
-            <NavLink onClick={()=>this.switch()} className="links" exact to="/">Home</NavLink>
-            <NavLink onClick={()=>this.switch()} className="links" to="/adopcion">Perros en adopcion</NavLink>
+            <NavLink onClick={()=>this.switch()} className="links" exact to="/">Inicio</NavLink>
+            <NavLink onClick={()=>this.switch()} className="links" to="/adopcion">Perros en adopción</NavLink>
             <NavLink onClick={()=>this.switch()} className="links" to="/noticias">Noticias</NavLink>
           </Nav>
           <Nav>

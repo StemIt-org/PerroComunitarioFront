@@ -120,7 +120,7 @@ export default class Donar extends React.Component {
               </button>
             </div>
             <div>
-              <a class="campo-form campo-submit-form mt-4 p-3" style={{display:this.state.fetched?"block":"none",color:"white",fontWeight:"bold"}} href={this.state.init_point} target="_blank" rel="noopener noreferrer">Pagar</a>
+              <a className="campo-form campo-submit-form mt-4 p-3" style={{display:this.state.fetched?"block":"none",color:"white",fontWeight:"bold"}} href={this.state.init_point} target="_blank" rel="noopener noreferrer">Pagar</a>
             </div>
             
             

@@ -110,7 +110,14 @@ h1{
 .navbar-logo{
   height: 59px;
   width: auto;
-  padding-left: 75px;
+  padding-left: 15px;
+
+}
+@media only screen and (min-width: 768px){
+  .navbar-logo{
+      padding-left: 75px;
+
+  }
 }
 
 /* ESTILOS DE EL FOOTER */
