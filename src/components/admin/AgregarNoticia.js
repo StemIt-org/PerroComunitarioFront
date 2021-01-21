@@ -20,6 +20,7 @@ export default function AgregarNoticia() {
 	const subir = async () => {
 		setLgShow(false)
 		var token = window.localStorage.getItem("token");
+		sweetalert("Subiendo", "Subiendo noticia a la base de datos, espere", "info")
 
 		const { title, image, subtitle, body, date } = inputs;
 		// sweetalert(
@@ -67,7 +68,7 @@ export default function AgregarNoticia() {
 			>
 				Noticias
 			</h1>
-			<div className="float-right">
+			<div className="float-right" style={{marginTop:'10px', marginBottom:"10px"}}>
 				<Button variant="danger" onClick={() => setLgShow(true)}>Agregar noticia!</Button>
 			</div>
 			<br />

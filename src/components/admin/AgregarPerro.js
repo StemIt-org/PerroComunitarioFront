@@ -23,6 +23,8 @@ export default function AgregarPerro() {
 		imagen: null
 	});
 	const subir = async () => {
+		sweetalert("Subiendo", "Subiendo perro a la base de datos, espere", "info")
+
 		setLgShow(false)
 		var token = window.localStorage.getItem("token")
 		const { nombre, edad, pelo, tamano, personalidad, sexo, info, sociabilidad, tiempo, imagen } = inputs
@@ -71,7 +73,7 @@ export default function AgregarPerro() {
 			>
 				Perros
 			</h1>
-			<div className="float-right">
+			<div className="float-right" style={{marginTop:'10px', marginBottom:"10px"}}>
 				<Button variant="danger" onClick={() => setLgShow(true)}>Agregar perro!</Button>
 			</div>
 			<br/>
