@@ -13,10 +13,6 @@ export class Login extends Component {
     Submit = (e) => {
         e.preventDefault();
         const { user, password } = this.state
-        console.log("Form submitted!", this.state)
-        console.log("User: ", user);
-        console.log("Password: ", password);
-        console.log(user + ":" + password);
         const userpass = user + ':' + password
         const encodedString = Buffer.from(userpass).toString('base64');
         console.log("ENCODED: ", encodedString);

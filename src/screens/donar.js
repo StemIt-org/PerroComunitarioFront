@@ -115,7 +115,7 @@ export default class Donar extends React.Component {
               <input onClick={this.ChangeActiveButton} type="number" placeholder="Otro monto" onChange={this.Change} id="monto" value={this.state.otro_monto}/>
             </div>
             <div className="campo-form campo-submit-form mt-4 p-3">
-              <button className="ml-2 btn">
+              <button className="ml-2 btn" type='submit'>
                 Donar!
               </button>
             </div>

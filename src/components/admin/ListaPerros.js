@@ -17,6 +17,19 @@ export class ListaPerros extends Component {
     });
   };
 
+  handleErase = (id_perro) => {
+    var token = window.localStorage.getItem("token")
+    axios({
+      method: "POST",
+      url: "http://35.211.3.86:3000/admin/eliminarPerro/" + id_perro,
+      headers: {
+				authorization: 'Bearer ' + token
+			}
+    }).then((resp) => {
+      window.location.reload(false);
+    });
+  }
+
   render() {
     return (
       <Row className="center carta-container" noGutters={true}>
@@ -39,7 +52,7 @@ export class ListaPerros extends Component {
                   />
                   <Card.Body>
                     <Card.Title><Link to={`/adopcion/${perro.id_perro}`}>{perro.nombre}</Link></Card.Title>
-                    <Button variant="secondary">Editar</Button>
+                    <Button variant="danger" onClick={() => this.handleErase(perro.id_perro)}>Eliminar</Button>
                   </Card.Body>
                 </Card>
               </Col>

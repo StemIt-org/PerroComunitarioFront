@@ -61,7 +61,7 @@ function FooterComponent() {
                 src={require("../assets/twitter-logo.png")}
               />
             </a>
-            <br />
+            {/* <br />
             <br />
             <a
               href="https://www.youtube.com/channel/UCq48j2MpfPWHI7ctRXuIWPQ"
@@ -74,7 +74,7 @@ function FooterComponent() {
                 className="iconos"
                 src={require("../assets/youtube-logo.png")}
               />
-            </a>
+            </a> */}
           </Col>
           <hr className="barra-footer" />
           <Col xs={12} lg={6}>
