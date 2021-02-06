@@ -27,6 +27,7 @@ export default class HeaderAdopcion extends React.Component {
             <img
               src={require("../../assets/perro-adopcion-1.png")}
               alt="Imagen Perro"
+              style={{width: '60%', height: '60%'}}
             />
           </Col>
         </Row>

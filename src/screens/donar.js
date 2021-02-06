@@ -21,7 +21,7 @@ export default class Donar extends React.Component {
   }
 
   DonationButtons = [
-    500,300,100
+    2000, 1000, 500,300,100
   ]
 
 
@@ -52,7 +52,7 @@ export default class Donar extends React.Component {
   Submit = (e) => {
     e.preventDefault();
     console.log("DONAR $", this.state.monto, " de parte de ", this.state.email);
-    const url = "http://localhost:3001/user/crearPreferenciaByDinero"
+    const url = "http://35.211.3.86:3000/user/crearPreferenciaByDinero"
     const data = {dinero:this.state.monto}
     post(url,data)
     .then(r => {
@@ -87,8 +87,31 @@ export default class Donar extends React.Component {
             A través de tu donacion nos ayudas a seguir creciendo y salvando
             perritos <b>RELLENAR ESTO</b>
           </p>
-          <img src={require("../assets/mercadopago.png")} alt="imagen mercadopago" style={{ width: "300px" }}/>
-
+          <h1 className="titulo-donacion">Transferencias</h1>
+          <div style={{backgroundColor: "#ececec", borderRadius: '3vw', padding: '2vw', width: '100%'}}>
+            <div>
+              <label><b>Tipo y Número de Cuenta: </b></label>
+              <label style={{marginLeft: '1vw'}}>Cuenta Corriente en Pesos 727-000902/1</label>
+            </div>
+            <div>
+              <label><b>Número de CBU </b></label>
+              <label style={{marginLeft: '1vw'}}>0720727520000000090218</label>
+            </div>
+            <div>
+              <label><b>Razón Social</b></label>
+              <label style={{marginLeft: '1vw'}}>PERRO COMUNITARIO ASOC CIVIL</label>
+            </div>
+            <div>
+              <label><b>CUIT/CUIL</b></label>
+              <label style={{marginLeft: '1vw'}}>30714089419</label>
+            </div>
+            <div>
+              <label><b>ALIAS</b></label>
+              <label style={{marginLeft: '1vw'}}>PERRO.COMUNITARIO</label>
+            </div>
+          </div>
+          {/* <h1 className="titulo-donacion" style={{marginTop: '2vw', marginBottom: '0'}}>Mercado Pago</h1> */}
+          <img src={require("../assets/mercadopago.png")} alt="imagen mercadopago" style={{ width: "300px", margin: '1vw', marginTop: '3.5vw' }}/>
           <form className="mb-5" onSubmit={this.Submit}>
             <div className="campo-form p-3">
               <img src={require("../assets/imagen-mail-form.png")} alt="Logo mail" className="ml-3 mr-4"/>

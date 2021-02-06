@@ -3,9 +3,10 @@ import { Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 export default class EstadisticasComponent extends React.Component {
-  // constructor() {
-  //   super()
-  // }
+  constructor() {
+    super()
+    this.years = new Date().getFullYear() - 2013
+  }
 
   render() {
     return (
@@ -19,15 +20,15 @@ export default class EstadisticasComponent extends React.Component {
           </Row>
           <Row>
             <Col>
-              <h1 className="negrita">+10</h1>
+              <h1 className="negrita">{this.years}</h1>
               <p className="fs-13">Años rescatando perros</p>
             </Col>
             <Col>
-              <h1 className="negrita">+1000</h1>
+              <h1 className="negrita">+600</h1>
               <p className="fs-13">Perros rescatados</p>
             </Col>
             <Col>
-              <h1 className="negrita">+500</h1>
+              <h1 className="negrita">+600</h1>
               <p className="fs-13">Familias felices</p>
             </Col>
           </Row>

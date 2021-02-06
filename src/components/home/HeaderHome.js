@@ -19,7 +19,7 @@ export default class HeaderComponent extends React.Component {
           </Col>
           <Col xs={12} lg={7} >
             <img style={{width: '100%', borderRadius: 10}} src={require('../../assets/perro-header.png')} alt="Imagen Perro" />
-            <p className="text-secondary text-center mt-2 header-home-epigrafe">Fermín, Enero de 2020</p>
+            <p className="text-secondary text-center mt-2 header-home-epigrafe">Nahual</p>
           </Col>
         </Row>
       </>
