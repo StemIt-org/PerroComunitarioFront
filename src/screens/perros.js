@@ -12,7 +12,7 @@ class Perros extends React.Component {
   leerDB() {
     axios({
       method: 'post',
-      url: 'http://35.211.3.86:3000/user/agarrarPerros/' + this.props.match.params.perro,
+      url: 'https://perroback.stemit.com.ar/user/agarrarPerros/' + this.props.match.params.perro,
     }).then((resp) => {
       const data = resp.data.data
       if (data === undefined) {
@@ -37,7 +37,7 @@ class Perros extends React.Component {
               <Col lg={6}>
                 <img
                   alt="Imagen perro"
-                  src={`http://35.211.3.86:3000/${this.state.imagen}`}
+                  src={`https://perroback.stemit.com.ar/${this.state.imagen}`}
                 />
               </Col>
               <Col>

@@ -3,6 +3,8 @@ import "../css/form.css";
 import { Form, Col, Row } from "react-bootstrap";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import sweetalert from 'sweetalert'
+
 export class adoptar extends Component {
 	state = {
 		perro: this.props.match.params.perro,
@@ -20,7 +22,7 @@ export class adoptar extends Component {
 		axios({
 			method: "post",
 			url:
-				"http://35.211.3.86:3000/user/agarrarPerros/" +
+				"https://perroback.stemit.com.ar/user/agarrarPerros/" +
 				this.props.match.params.perro,
 		})
 			.then((resp) => {
@@ -48,7 +50,7 @@ export class adoptar extends Component {
 		console.log("DATA: ", this.state.form);
 		axios({
 			method: 'POST',
-			url: "http://35.211.3.86:3000/user/completarFormulario",
+			url: "https://perroback.stemit.com.ar/user/completarFormulario",
 			headers: {
 				'content-type': 'application/json'
 			},
@@ -56,9 +58,11 @@ export class adoptar extends Component {
 				...this.state.form
 			}
 		}).then((resp) => {
-			console.log(resp);
+			if (resp.data.success) {
+				sweetalert("Éxito!", "Formulario enviado con éxito", "success")
+			}
 		}).catch((err) => {
-			console.log(err);
+			sweetalert("Error!", `Ha habido un error subiendo el formulario, intenta de vuelta!\nCodigo de error: ${err.message}`, "error")
 		})
 	};
 	change = (e) => {

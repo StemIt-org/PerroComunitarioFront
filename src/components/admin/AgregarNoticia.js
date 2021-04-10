@@ -28,7 +28,7 @@ export default function AgregarNoticia() {
 		// 	`Titulo: ${title}\n Imagen: ${image}\n Subtitle: ${subtitle}\nBody: ${body}\n Date: ${date}`
 		// );
 		console.log(inputs);
-		const url = "http://35.211.3.86:3000/admin/subirNoticia";
+		const url = "https://perroback.stemit.com.ar/admin/subirNoticia";
 		const formData = new FormData();
 		formData.append("filee", image);
 		formData.append("title", title);

@@ -8,7 +8,7 @@ export default function Noticia(props) {
 		axios({
 			method: "GET",
 			url:
-				"http://35.211.3.86:3000/user/abrirNoticia/" +
+				"https://perroback.stemit.com.ar/user/abrirNoticia/" +
 				props.match.params.noticia,
 		})
 			.then((resp) => {
@@ -35,7 +35,7 @@ export default function Noticia(props) {
 							<img
 								className="shadow-lg"
 								alt="Imagen noticia"
-								src={`http://35.211.3.86:3000/${noticia.image}`}
+								src={`https://perroback.stemit.com.ar/${noticia.image}`}
 							/>
 						</Col>
 						<Col>

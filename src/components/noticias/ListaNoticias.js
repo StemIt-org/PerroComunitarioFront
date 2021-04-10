@@ -7,7 +7,7 @@ export default function ListaNoticias() {
 	React.useEffect(() => {
 		axios({
 			method: "GET",
-			url: "http://35.211.3.86:3000/user/mostrarNoticias",
+			url: "https://perroback.stemit.com.ar/user/mostrarNoticias",
 		})
 			.then((resp) => {
 				const data = resp.data.data;
@@ -41,7 +41,7 @@ export default function ListaNoticias() {
 										<div className="w-100 border borderRadius p-2 mb-5 ">
 											<h2 className="negrita">{noti.title}</h2>
 											<img
-												src={`http://35.211.3.86:3000/${noti.image}`}
+												src={`https://perroback.stemit.com.ar/${noti.image}`}
 												alt="imagen del perro en adopcion"
 											/>
 											<p className="text-center">{noti.subtitle}</p>

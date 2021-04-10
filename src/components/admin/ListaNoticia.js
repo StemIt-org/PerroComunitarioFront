@@ -10,7 +10,7 @@ export class ListaNoticia extends Component {
     componentDidMount=()=>{
         axios({
 			method: "GET",
-			url: "http://35.211.3.86:3000/user/mostrarNoticias",
+			url: "https://perroback.stemit.com.ar/user/mostrarNoticias",
 		})
 			.then((resp) => {
                 const data = resp.data.data;
@@ -23,6 +23,20 @@ export class ListaNoticia extends Component {
 				console.log(err);
 			});
     }
+
+    handleErase = (id_noticia) => {
+        var token = window.localStorage.getItem("token")
+        axios({
+          method: "POST",
+          url: "https://perroback.stemit.com.ar/admin/borrarNoticia/" + id_noticia,
+          headers: {
+                    authorization: 'Bearer ' + token
+                },
+        }).then((resp) => {
+          window.location.reload(false);
+        });
+      }
+
     render() {
         console.log("NOTICIAs:", this.state);
         return (
@@ -30,11 +44,11 @@ export class ListaNoticia extends Component {
                 {this.state.noticias && this.state.noticias.map(noticia => {
                     return (
                         <Card style={{ width: '14rem', margin: '10px' }} key={noticia.id_noticias}>
-                            <Card.Img variant="top" src={`http://35.211.3.86:3000/${noticia.image}`} style={{ height: '9rem', objectFit: 'scale-down' }} />
+                            <Card.Img variant="top" src={`https://perroback.stemit.com.ar/${noticia.image}`} style={{ height: '9rem', objectFit: 'scale-down' }} />
                             <Card.Body>
                                 <Card.Title><Link to={`/noticias/${noticia.id_noticias}`}>{noticia.title}</Link></Card.Title>
 
-                                <Button variant="secondary">Editar</Button>
+                                <Button variant="danger" onClick={() => this.handleErase(noticia.id_noticias)}>Eliminar</Button>
                             </Card.Body>
                         </Card>
                     )

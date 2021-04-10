@@ -12,7 +12,7 @@ export default class ShowcaseComponent extends React.Component {
 	componentDidMount = () => {
 		axios({
 			method: "GET",
-			url: "http://35.211.3.86:3000/user/mostrarPerros",
+			url: "https://perroback.stemit.com.ar/user/mostrarPerros",
 		})
 			.then((resp) => {
 				// console.log("DATA: ", resp);
@@ -46,7 +46,7 @@ export default class ShowcaseComponent extends React.Component {
 											<h2 className="negrita">{perro.nombre}</h2>
 										</Link>
 										<img
-											src={`http://35.211.3.86:3000/${perro.imagen}`}
+											src={`https://perroback.stemit.com.ar/${perro.imagen}`}
 											alt="Imagen Perro"
 										/>
 										<div>
@@ -77,7 +77,7 @@ export default class ShowcaseComponent extends React.Component {
 											<h2 className="negrita">{perro.nombre}</h2>
 										</Link>
 										<img
-											src={`http://35.211.3.86:3000/${perro.imagen}`}
+											src={`https://perroback.stemit.com.ar/${perro.imagen}`}
 											alt="Imagen Perro"
 										/>
 										<div>
@@ -108,7 +108,7 @@ export default class ShowcaseComponent extends React.Component {
 											<h2 className="negrita">{perro.nombre}</h2>
 										</Link>
 										<img
-											src={`http://35.211.3.86:3000/${perro.imagen}`}
+											src={`https://perroback.stemit.com.ar/${perro.imagen}`}
 											alt="Imagen Perro"
 										/>
 										<div>

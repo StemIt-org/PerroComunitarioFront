@@ -9,7 +9,7 @@ export class ListaPerros extends Component {
   componentDidMount = () => {
     axios({
       method: "GET",
-      url: "http://35.211.3.86:3000/user/mostrarPerros",
+      url: "https://perroback.stemit.com.ar/user/mostrarPerros",
     }).then((resp) => {
       //   console.log("DATA: ", resp);
       this.setState({ perros: resp.data.data });
@@ -21,7 +21,7 @@ export class ListaPerros extends Component {
     var token = window.localStorage.getItem("token")
     axios({
       method: "POST",
-      url: "http://35.211.3.86:3000/admin/eliminarPerro/" + id_perro,
+      url: "https://perroback.stemit.com.ar/admin/eliminarPerro/" + id_perro,
       headers: {
 				authorization: 'Bearer ' + token
 			}
@@ -43,7 +43,7 @@ export class ListaPerros extends Component {
                 >
                   <Card.Img
                     variant="top"
-                    src={`http://35.211.3.86:3000/${perro.imagen}`}
+                    src={`https://perroback.stemit.com.ar/${perro.imagen}`}
                     style={{
                       height: "9rem",
                       maxHeight: "100%",

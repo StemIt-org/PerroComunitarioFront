@@ -30,7 +30,7 @@ export default function AgregarPerro() {
 		const { nombre, edad, pelo, tamano, personalidad, sexo, info, sociabilidad, tiempo, imagen } = inputs
 		// sweetalert("Agregar perro:", `Nombre: ${nombre}\nEdad: ${edad}\nPelo: ${pelo}\nTamaño: ${tamano}\nPersonalidad: ${personalidad}\nSexo: ${sexo}\nInformacion: ${info}\nSociabilidad: ${sociabilidad}\nTiempo en adopcion: ${tiempo}\nImagen: ${imagen}`)
 		console.log(inputs);
-		const url = 'http://35.211.3.86:3000/admin/subirPerro';
+		const url = 'https://perroback.stemit.com.ar/admin/subirPerro';
 		const formData = new FormData();
 		formData.append('filee', imagen)
 		formData.append('nombre', nombre)
@@ -52,6 +52,7 @@ export default function AgregarPerro() {
 			.then((r) => {
 				console.log(r);
 				sweetalert("Éxito!", "Perro subido con exito", "success")
+				window.location.reload(false);
 			}).catch((err) => {
 				sweetalert("Error!", `Ha habido un error subiendo el perro, intenta de vuelta!\nCodigo de error: ${err.message}`, "error")
 				console.log(err);

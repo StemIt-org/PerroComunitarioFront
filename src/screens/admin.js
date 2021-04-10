@@ -18,7 +18,7 @@ export class Admin extends Component {
 		if (window.localStorage.getItem("token") !== null) {
 			axios({
 				method: 'GET',
-				url: 'http://35.211.3.86:3000/admin/checkAdmin',
+				url: 'https://perroback.stemit.com.ar/admin/checkAdmin',
 				headers: {
 					'content-type': 'application/json',
 					authorization: 'Bearer ' + token

@@ -52,7 +52,7 @@ export default class Donar extends React.Component {
   Submit = (e) => {
     e.preventDefault();
     console.log("DONAR $", this.state.monto, " de parte de ", this.state.email);
-    const url = "http://35.211.3.86:3000/user/crearPreferenciaByDinero"
+    const url = "https://perroback.stemit.com.ar/user/crearPreferenciaByDinero"
     const data = {dinero:this.state.monto}
     post(url,data)
     .then(r => {
@@ -83,9 +83,8 @@ export default class Donar extends React.Component {
       <>
         <div className="container">
           <h1 className="titulo-donacion">Donaciones</h1>
-          <p className="texto-donacion">
-            A través de tu donacion nos ayudas a seguir creciendo y salvando
-            perritos <b>RELLENAR ESTO</b>
+          <p className="texto-donacion">    
+            Donaciones en efectivo a nuestra Cuenta bancaria o abonando por MercadoPago. No hay monto muy pequeño ni muy grande para nuestra labor.
           </p>
           <h1 className="titulo-donacion">Transferencias</h1>
           <div style={{backgroundColor: "#ececec", borderRadius: '3vw', padding: '2vw', width: '100%'}}>

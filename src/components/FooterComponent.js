@@ -49,7 +49,7 @@ function FooterComponent() {
             </a>
             <br />
             <br />
-            <a
+            {/* <a
               href="https://twitter.com/pcomunitarioong"
               target="_blank"
               rel="noopener noreferrer"
@@ -60,7 +60,7 @@ function FooterComponent() {
                 className="iconos"
                 src={require("../assets/twitter-logo.png")}
               />
-            </a>
+            </a> */}
             {/* <br />
             <br />
             <a

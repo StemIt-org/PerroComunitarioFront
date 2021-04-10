@@ -12,7 +12,7 @@ export default class ListaAdopcion extends React.Component {
 		// Mostrar o no las flechitas en base a la cantidad de perros
 		axios({
 			method: "GET",
-			url: "http://35.211.3.86:3000/user/mostrarPerros",
+			url: "https://perroback.stemit.com.ar/user/mostrarPerros",
 		}).then((resp) => {
 			console.log("DATA: ", resp);
 			this.setState({ perros: resp.data.data });
@@ -40,7 +40,7 @@ export default class ListaAdopcion extends React.Component {
 										<img
 											style={{ height: "170px", objectFit: "cover" }}
 											src={
-												`http://35.211.3.86:3000/${perro.imagen}` ||
+												`https://perroback.stemit.com.ar/${perro.imagen}` ||
 												"../../assets/perro-adopcion-2.png"
 											}
 											alt={`Imagen ${perro.nombre}`}
