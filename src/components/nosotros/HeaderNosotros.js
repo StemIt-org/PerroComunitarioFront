@@ -10,7 +10,7 @@ function HeaderNosotros() {
 Qué es un perro comunitario? Un PC es un perro de todos. Al no contar con un refugio propio, optamos por este sistema en el que colocamos un collar rojo identificatorio el cual permite controlar su evolución y abrir una posibilidad de adopción. Todos ellos estan castrados vacunados y desparasitados . Cada uno de ellos es alimentado diariamente por nuestras voluntarias, deseando que algún día abandonen la calle y tengan un hogar.
 La organización tiene tres pilares: educar, esterilizar y adoptar.</p>
             <Card className="card-container mb-5"> 
-            <iframe src="https://www.youtube.com/embed/q5q4FPb84lI" height='400' frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe title="Video" src="https://www.youtube.com/embed/q5q4FPb84lI" height='400' frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 <Card.Body className="footerImg-nosotros texto-nosotros-borde">
                     <Card.Text className="pt-3 pb-3">
                     Quienes somos 
